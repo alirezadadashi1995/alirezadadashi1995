@@ -9,7 +9,6 @@
     <title>تعمیرات تخصصی موبایل و لپ‌تاپ در تهران | راچار | Alireza Dadashi</title>
     <link rel="canonical" href="https://rachar.ir" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" href="favicon.png">
     <meta property="og:title" content="تعمیرات تخصصی موبایل و لپ‌تاپ در تهران | راچار | Alireza Dadashi">
@@ -37,29 +36,6 @@
 </head>
 <body>
     <header>
-        <!-- اسلایدر -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="image1.jpg" alt="تصویر ۱">
-                </div>
-                <div class="swiper-slide">
-                    <img src="image2.jpg" alt="تصویر ۲">
-                </div>
-                <div class="swiper-slide">
-                    <img src="image3.jpg" alt="تصویر ۳">
-                </div>
-                <div class="swiper-slide">
-                    <img src="image4.jpg" alt="تصویر ۴">
-                </div>
-            </div>
-            <!-- پاگینیشن -->
-            <div class="swiper-pagination"></div>
-            <!-- دکمه‌های ناوبری -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-
         <img src="logo.png" alt="لوگوی مرکز تعمیرات راچار" class="logo">
         <h1>مرکز تعمیرات تخصصی سیار راچار 🛠️</h1>
         <p>با ۱۰ سال سابقه کار سیار در سرتاسر تهران، آماده‌ی ارائه‌ی خدمات تعمیرات تخصصی به شما هستیم 🌟</p>
@@ -85,6 +61,17 @@
     <section id="services">
         <h2>خدمات ما 🔧</h2>
         <p>ما در مرکز تعمیرات راچار، خدمات تعمیرات انواع دستگاه‌های الکترونیکی از جمله موبایل، لپ‌تاپ، کامپیوتر، تلویزیون، تلفن خانگی، انواع اسپیکر و دیگر لوازم صوتی و تصویری رو به شما ارائه می‌دیم. با بیش از ۱۰ سال سابقه درخشان در سرتاسر تهران، تضمین می‌کنیم که دستگاه‌هاتون رو با بهترین کیفیت و در سریع‌ترین زمان ممکن تعمیر کنیم. خدمات ما به صورت سیار هست و می‌تونیم در محل شما حاضر بشیم 💼</p>
+        
+        <!-- اسلایدر تصاویر -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="image1.jpg" alt="تصویر ۱ راچار"></div>
+                <div class="slide"><img src="image2.jpg" alt="تصویر ۲ راچار"></div>
+                <div class="slide"><img src="image3.jpg" alt="تصویر ۳ راچار"></div>
+                <div class="slide"><img src="image4.jpg" alt="تصویر ۴ راچار"></div>
+            </div>
+        </div>
+
         <h3>چرا راچار؟</h3>
         <p><strong>راچار</strong> با بیش از ۱۰ سال سابقه درخشان، بهترین خدمات تعمیرات سیار را در تهران ارائه می‌دهد. ما با استفاده از <b>تجهیزات پیشرفته</b> و <b>تیم متخصص</b>، تعمیرات شما را با بالاترین کیفیت انجام می‌دهیم.</p>
     </section>
@@ -123,29 +110,7 @@
         <p>تمام حقوق این سایت متعلق به گروه تعمیراتی راچار است©</p>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // راه‌اندازی اسلایدر
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: true,
-            },
-            grabCursor: true,
-            effect: 'slide',
-            speed: 600,
-        });
-
-        // توابع دیگر
         function toggleMenu() {
             const nav = document.querySelector('.main-nav');
             nav.classList.toggle('active');
@@ -153,12 +118,14 @@
             overlay.classList.toggle('active');
         }
 
+        // بستن منو پس از کلیک روی یک لینک
         document.querySelectorAll('.main-nav ul li a').forEach(link => {
             link.addEventListener('click', () => {
                 toggleMenu();
             });
         });
 
+        // انیمیشن اسکرول برای بخش‌ها
         document.addEventListener("DOMContentLoaded", function() {
             const sections = document.querySelectorAll("section");
             const iframe = document.querySelector("iframe");
@@ -189,8 +156,21 @@
             };
 
             window.addEventListener("scroll", checkVisibility);
-            checkVisibility();
+            checkVisibility(); // بررسی اولیه
         });
+
+        // اسکریپت اسلایدر
+        let currentSlide = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function showNextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // تغییر اسلاید هر 3 ثانیه
+        setInterval(showNextSlide, 3000);
     </script>
 </body>
 </html>
