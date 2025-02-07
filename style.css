@@ -257,3 +257,47 @@ iframe.visible {
         display: block;
     }
 }
+
+/* استایل اسلایدر */
+.slider {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* تنظیمات اسلایدها */
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 25%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .slider {
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .slide img {
+        height: 200px;
+    }
+}
+
