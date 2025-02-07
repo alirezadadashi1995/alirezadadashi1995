@@ -1,9 +1,10 @@
 let index = 0;
-const slides = document.querySelector(".slides");
+const slides = document.querySelector(".slider .slides");
+const totalSlides = document.querySelectorAll(".slider .slide").length;
 
 function nextSlide() {
-    index = (index + 1) % 4;
-    slides.style.transform = `translateX(-${index * 25}%)`;
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * (100 / totalSlides)}%)`;
 }
 
 setInterval(nextSlide, 3000);
