@@ -260,25 +260,25 @@ iframe.visible {
 
 /* استایل اسلایدر */
 .slider {
-    width: 100%;
+    position: relative;
     max-width: 800px;
     height: 300px;
-    overflow: hidden;
-    position: relative;
     margin: 20px auto;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* تنظیمات اسلایدها */
-.slides {
-    display: flex;
-    width: calc(100% * 4); /* برای 4 اسلاید */
-    transition: transform 0.5s ease-in-out;
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.slide {
-    flex: 0 0 100%;
+.slide.active {
+    opacity: 1;
 }
 
 .slide img {
@@ -287,14 +287,26 @@ iframe.visible {
     object-fit: cover;
 }
 
-/* ریسپانسیو برای موبایل */
-@media (max-width: 768px) {
-    .slider {
-        max-width: 100%;
-        height: 200px;
-    }
+/* دکمه‌های کنترل اسلایدر */
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
 
-    .slide img {
-        height: 200px;
-    }
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
