@@ -11,7 +11,7 @@ body {
 header {
     background: #FFA500; /* نارنجی */
     color: #000; /* مشکی */
-    padding: 40px 20px;
+    padding: 20px;
     position: relative;
 }
 
@@ -200,6 +200,36 @@ iframe.visible {
     transform: scale(1);
 }
 
+/* استایل‌های اسلایدر */
+.swiper-container {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #FFA500;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFA500;
+}
+
 /* استایل‌های موبایل */
 @media (max-width: 768px) {
     .menu-icon {
@@ -241,7 +271,6 @@ iframe.visible {
         color: #FFA500; /* نارنجی */
     }
 
-    /* پس‌زمینه تاری */
     .overlay {
         display: none;
         position: fixed;
@@ -255,5 +284,9 @@ iframe.visible {
 
     .overlay.active {
         display: block;
+    }
+
+    .swiper-container {
+        height: 300px;
     }
 }
