@@ -1,10 +1,29 @@
-let index = 0;
-const slides = document.querySelector(".slider .slides");
-const slideCount = document.querySelectorAll(".slider .slide").length;
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+const prevButton = document.getElementById("prevSlide");
+const nextButton = document.getElementById("nextSlide");
 
-function nextSlide() {
-    index = (index + 1) % slideCount;
-    slides.style.transform = `translateX(-${index * 100}%)`;
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
 }
 
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+}
+
+nextButton.addEventListener("click", nextSlide);
+prevButton.addEventListener("click", prevSlide);
+
+// نمایش خودکار هر ۳ ثانیه
 setInterval(nextSlide, 3000);
+
+// نمایش اسلاید اول در ابتدا
+showSlide(currentSlide);
