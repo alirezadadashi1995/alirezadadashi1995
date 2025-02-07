@@ -273,14 +273,12 @@ iframe.visible {
 /* تنظیمات اسلایدها */
 .slides {
     display: flex;
-    width: 400%;
-    height: 100%;
+    width: calc(100% * 4); /* برای 4 اسلاید */
     transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-    width: 25%;
-    flex-shrink: 0;
+    flex: 0 0 100%;
 }
 
 .slide img {
