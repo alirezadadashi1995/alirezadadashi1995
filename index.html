@@ -59,10 +59,18 @@
 
     <!-- اسلایدر تصاویر -->
 <div class="slider">
-    <div class="slide active"><img src="image1.jpg" alt="تصویر ۱"></div>
-    <div class="slide"><img src="image2.jpg" alt="تصویر ۲"></div>
-    <div class="slide"><img src="image3.jpg" alt="تصویر ۳"></div>
-    <div class="slide"><img src="image4.jpg" alt="تصویر ۴"></div>
+    <div class="slide active">
+        <img src="image1.jpg" srcset="image1-small.jpg 480w, image1-medium.jpg 768w, image1-large.jpg 1200w" alt="تصویر ۱">
+    </div>
+    <div class="slide">
+        <img src="image2.jpg" srcset="image2-small.jpg 480w, image2-medium.jpg 768w, image2-large.jpg 1200w" alt="تصویر ۲">
+    </div>
+    <div class="slide">
+        <img src="image3.jpg" srcset="image3-small.jpg 480w, image3-medium.jpg 768w, image3-large.jpg 1200w" alt="تصویر ۳">
+    </div>
+    <div class="slide">
+        <img src="image4.jpg" srcset="image4-small.jpg 480w, image4-medium.jpg 768w, image4-large.jpg 1200w" alt="تصویر ۴">
+    </div>
 </div>
 <div class="slider-controls">
     <button id="prevSlide">❮</button>
