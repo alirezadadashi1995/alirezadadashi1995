@@ -261,8 +261,8 @@ iframe.visible {
 /* استایل اسلایدر */
 .slider {
     position: relative;
-    max-width: 800px;
-    height: 50vh; /* ارتفاع اسلایدر متناسب با ارتفاع صفحه نمایش */
+    max-width: 100%; /* عرض اسلایدر متناسب با عرض صفحه */
+    height: 50vh; /* ارتفاع اسلایدر متناسب با ارتفاع صفحه */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -291,7 +291,7 @@ iframe.visible {
 .slider-controls {
     position: absolute;
     width: 100%;
-    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
+    bottom: 10px;
     left: 0;
     display: none;
     justify-content: space-between;
@@ -310,7 +310,6 @@ iframe.visible {
     border-radius: 5px;
     pointer-events: all;
 }
-
 
 .slider-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
