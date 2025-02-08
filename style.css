@@ -291,14 +291,13 @@ iframe.visible {
 .slider-controls {
     position: absolute;
     width: 100%;
-    top: 50%; /* دکمه‌ها را در وسط عمودی قرار دهید */
+    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
     left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    transform: translateY(-50%); /* برای قرار دادن دقیق در وسط */
-    pointer-events: none; /* اجازه کلیک روی عکس را می‌دهد */
+    pointer-events: none;
 }
 
 .slider-controls button {
@@ -309,8 +308,9 @@ iframe.visible {
     cursor: pointer;
     font-size: 1.5em;
     border-radius: 5px;
-    pointer-events: all; /* فعال بودن کلیک روی دکمه‌ها */
+    pointer-events: all;
 }
+
 
 .slider-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
