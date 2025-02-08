@@ -290,8 +290,8 @@ iframe.visible {
 /* دکمه‌های کنترل اسلایدر */
 .slider-controls {
     position: absolute;
-    width: 20%;
-    height: 5%;  /* دکمه‌ها در ارتفاع کامل اسلایدر قرار بگیرند */
+    width: 100%;
+    height: 500%;  /* دکمه‌ها در ارتفاع کامل اسلایدر قرار بگیرند */
     top: 0;
     left: 0;
     display: flex;
