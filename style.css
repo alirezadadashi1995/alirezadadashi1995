@@ -263,7 +263,7 @@ iframe.visible {
     position: relative;
     max-width: 100%; /* به جای ۸۰۰ پیکسل، ۱۰۰٪ از عرض صفحه */
     height: auto;
-    aspect-ratio: 16 / 9; /* نسبت تصویری مناسب برای نمایش */
+    aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
