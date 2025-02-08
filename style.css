@@ -293,7 +293,7 @@ iframe.visible {
     width: 100%;
     bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
     left: 0;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
