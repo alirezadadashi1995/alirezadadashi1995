@@ -261,8 +261,8 @@ iframe.visible {
 /* استایل اسلایدر */
 .slider {
     position: relative;
-    max-width: 100%; /* عرض اسلایدر متناسب با عرض صفحه */
-    height: 50vh; /* ارتفاع اسلایدر متناسب با ارتفاع صفحه */
+    max-width: 800px;
+    height: 300px;
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -284,14 +284,14 @@ iframe.visible {
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* تصویر به طور کامل در اسلایدر نمایش داده شود */
+    object-fit: cover;
 }
 
 /* دکمه‌های کنترل اسلایدر */
 .slider-controls {
     position: absolute;
     width: 100%;
-    bottom: 10px;
+    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
     left: 0;
     display: none;
     justify-content: space-between;
@@ -311,41 +311,7 @@ iframe.visible {
     pointer-events: all;
 }
 
+
 .slider-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
-/* استایل‌های موبایل */
-@media (max-width: 768px) {
-    .slider {
-        height: 40vh; /* ارتفاع کمتر برای موبایل */
-    }
-
-    .slider-controls {
-        display: flex; /* نمایش دکمه‌های کنترل در موبایل */
-    }
-}
-
-/* استایل‌های تبلت */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .slider {
-        height: 50vh; /* ارتفاع متوسط برای تبلت */
-    }
-}
-
-/* استایل‌های دسکتاپ */
-@media (min-width: 1025px) {
-    .slider {
-        height: 60vh; /* ارتفاع بیشتر برای دسکتاپ */
-    }
-}
-/* استایل لودینگ */
-.slider::before {
-    content: "در حال بارگذاری...";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
-    color: #fff;
-    z-index: 1000;
 }
