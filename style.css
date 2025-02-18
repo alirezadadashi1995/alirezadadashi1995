@@ -3,13 +3,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF; /* سفید */
+    background-color: #E0EBF3; /* آبی روشن */
     color: #333;
     text-align: center;
 }
 
 header {
-    background: #FFFFFF; /* سفید */
+    background: #E0EBF3; /* آبی روشن */
     color: #005F99; /* آبی تیره */
     padding: 40px 20px;
     position: relative;
@@ -39,7 +39,13 @@ header p {
 }
 
 .main-nav {
-    margin-top: 20px;
+    margin-top: 0; /* حذف فاصله بالا */
+    background: #FFA500; /* نارنجی */
+    position: fixed; /* ثابت کردن موقعیت */
+    top: 0; /* قرار دادن در بالای صفحه */
+    left: 0; /* قرار دادن در سمت چپ صفحه */
+    width: 100%; /* عرض کامل صفحه */
+    z-index: 1000; /* قرار دادن بالاتر از سایر عناصر */
 }
 
 .main-nav ul {
@@ -51,19 +57,19 @@ header p {
 }
 
 .main-nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .main-nav ul li a {
-    color: #005F99; /* آبی تیره */
+    color: #000000; /* مشکی */
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    color: #005F99; /* آبی تیره */
-    font-size: 1.2em;
+    color: #FFFFFF; /* سفید */
+    font-size: 1.5em;
     text-decoration: underline;
 }
 
