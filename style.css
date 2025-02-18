@@ -9,8 +9,8 @@ body {
 }
 
 header {
-    background: #F3F4F6; /* خاکستری روشن */
-    color: #005F99; /* آبی تیره */
+    background: #005F99; /* آبی تیره */
+    color: #F3F4F6; /* خاکستری روشن */
     padding: 40px 20px;
     position: relative;
 }
@@ -126,7 +126,7 @@ a:hover {
 
 .button {
     display: inline-block;
-    background: #00FF7F; #005F99; /* آبی تیره */
+    background: #005F99; /* آبی تیره */
     color: #F3F4F6; /* خاکستری روشن */
     padding: 10px 20px;
     border-radius: 4px;
