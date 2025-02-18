@@ -3,13 +3,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF; /* آبی روشن */
+    background-color: #FFFFFF; /* سفید */
     color: #333;
     text-align: center;
 }
 
 header {
-    background: #FFFFFF; /* آبی روشن */
+    background: #FFFFFF; /* سفید */
     color: #005F99; /* آبی تیره */
     padding: 40px 20px;
     position: relative;
@@ -40,7 +40,7 @@ header p {
 
 .main-nav {
     margin-top: 0; /* حذف فاصله بالا */
-    background: #FFA500; /* نارنجی */
+    background: #00FF7F; /* سبز نئونی */
     position: fixed; /* ثابت کردن موقعیت */
     top: 0; /* قرار دادن در بالای صفحه */
     left: 0; /* قرار دادن در سمت چپ صفحه */
@@ -133,7 +133,7 @@ a:hover {
 .button {
     display: inline-block;
     background: #005F99; /* آبی تیره */
-    color: #D1D5DB; /* خاکستری کمرنگ */
+    color: #FFFFFF; /* سفید */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -144,13 +144,13 @@ a:hover {
 
 .button:hover {
     transform: scale(1.05);
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+    background-color: #00FF7F; /* سبز نئونی */
 }
 
 .phone-button {
     display: inline-block;
     background: #005F99; /* آبی تیره */
-    color: #D1D5DB; /* خاکستری کمرنگ */
+    color: #FFFFFF; /* سفید */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -161,12 +161,12 @@ a:hover {
 
 .phone-button:hover {
     transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+    background-color: #00FF7F; /* سبز نئونی */
 }
 
 footer {
     background: #005F99; /* آبی تیره */
-    color: #D1D5DB; /* خاکستری کمرنگ */
+    color: #FFFFFF; /* سفید */
     padding: 20px;
     margin-top: 20px;
     transform: translateY(100%);
@@ -221,7 +221,7 @@ iframe.visible {
         right: -100%;
         width: 80%;
         height: 100%;
-        background: #D1D5DB; /* خاکستری کمرنگ */
+        background: #FFFFFF; /* سفید */
         z-index: 1000;
         transition: right 0.3s ease;
     }
@@ -357,7 +357,7 @@ iframe.visible {
 }
 
 #tracking button:hover {
-    background: #FF8C00; /* رنگ کمی تیره‌تر هنگام هاور */
+    background: #00FF7F; /* سبز نئونی */
     transform: scale(1.05);
 }
 
