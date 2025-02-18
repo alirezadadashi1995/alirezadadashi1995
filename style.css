@@ -3,14 +3,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #D3D3D3; /* خاکستری روشن */
     color: #333;
     text-align: center;
 }
 
 header {
-    background: #FFA500; /* نارنجی */
-    color: #000; /* مشکی */
+    background: #121212; /* مشکی متالیک */
+    color: #00FF7F; /* سبز نئونی */
     padding: 40px 20px;
     position: relative;
 }
@@ -18,11 +18,13 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    color: #00FF7F; /* سبز نئونی */
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 1.2em;
+    color: #D3D3D3; /* خاکستری روشن */
 }
 
 .logo {
@@ -53,15 +55,15 @@ header p {
 }
 
 .main-nav ul li a {
-    color: #fff; /* سفید */
+    color: #00FF7F; /* سبز نئونی */
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    color: #FFD700; /* زرد */
-    font-size: 1.2em; /* بزرگ‌تر شدن متن هنگام هاور */
+    color: #005F99; /* آبی تیره */
+    font-size: 1.2em;
     text-decoration: underline;
 }
 
@@ -124,8 +126,8 @@ a:hover {
 
 .button {
     display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
+    background: #00FF7F; /* سبز نئونی */
+    color: #121212; /* مشکی متالیک */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -135,8 +137,8 @@ a:hover {
 }
 
 .button:hover {
-    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+    transform: scale(1.05);
+    background-color: #005F99; /* آبی تیره */
 }
 
 .phone-button {
@@ -157,8 +159,8 @@ a:hover {
 }
 
 footer {
-    background: #4CAF50; /* سبز */
-    color: #fff;
+    background: #121212; /* مشکی متالیک */
+    color: #00FF7F; /* سبز نئونی */
     padding: 20px;
     margin-top: 20px;
     transform: translateY(100%);
