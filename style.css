@@ -3,13 +3,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #E0EBF3; /* آبی روشن */
+    background-color: #FFFFFF; /* آبی روشن */
     color: #333;
     text-align: center;
 }
 
 header {
-    background: #E0EBF3; /* آبی روشن */
+    background: #FFD280; /* آبی روشن */
     color: #005F99; /* آبی تیره */
     padding: 40px 20px;
     position: relative;
@@ -29,7 +29,7 @@ header p {
 
 .logo {
     width: 150px; /* اندازه‌ی لوگو */
-    height: auto;
+    height: 40px;
     margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
     transition: transform 0.5s ease;
 }
