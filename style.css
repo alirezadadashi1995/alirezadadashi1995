@@ -40,7 +40,7 @@ header p {
 
 .main-nav {
     margin-top: 0; /* حذف فاصله بالا */
-    background: #00FF7F; /* سبز نئونی */
+    background: #005F99; /* آبی تیره */
     position: fixed; /* ثابت کردن موقعیت */
     top: 0; /* قرار دادن در بالای صفحه */
     left: 0; /* قرار دادن در سمت چپ صفحه */
@@ -61,14 +61,14 @@ header p {
 }
 
 .main-nav ul li a {
-    color: #000000; /* مشکی */
+    color: #FFFFFF; /* سفید */
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    color: #FFFFFF; /* سفید */
+    color: #00FF7F; /* سبز نئونی */
     font-size: 1.5em;
     text-decoration: underline;
 }
