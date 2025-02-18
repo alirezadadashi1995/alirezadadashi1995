@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background: #FFD280; /* آبی روشن */
+    background: #FFFFFF; /* آبی روشن */
     color: #005F99; /* آبی تیره */
     padding: 40px 20px;
     position: relative;
@@ -29,7 +29,7 @@ header p {
 
 .logo {
     width: 150px; /* اندازه‌ی لوگو */
-    height: 40px;
+    height: auto;
     margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
     transition: transform 0.5s ease;
 }
