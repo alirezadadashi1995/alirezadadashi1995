@@ -9,8 +9,8 @@ body {
 }
 
 header {
-    background: #005F99; /* آبی تیره */
-    color: #F3F4F6; /* خاکستری روشن */
+    background: #F3F4F6; /* خاکستری روشن */
+    color: #005F99; /* آبی تیره */
     padding: 40px 20px;
     position: relative;
 }
@@ -18,13 +18,13 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #F3F4F6; /* خاکستری روشن */
+    color: #005F99; /* آبی تیره */
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 1.2em;
-    color: #F3F4F6; /* خاکستری روشن */
+    color: #005F99; /* آبی تیره */
 }
 
 .logo {
