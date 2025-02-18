@@ -3,13 +3,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #005F99; /* آبی تیره */
+    background-color: #D1D5DB; /* خاکستری کمرنگ */
     color: #333;
     text-align: center;
 }
 
 header {
-    background: #F3F4F6; /* خاکستری روشن */
+    background: #D1D5DB; /* خاکستری کمرنگ */
     color: #005F99; /* آبی تیره */
     padding: 40px 20px;
     position: relative;
@@ -127,7 +127,7 @@ a:hover {
 .button {
     display: inline-block;
     background: #005F99; /* آبی تیره */
-    color: #F3F4F6; /* خاکستری روشن */
+    color: #D1D5DB; /* خاکستری کمرنگ */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -144,7 +144,7 @@ a:hover {
 .phone-button {
     display: inline-block;
     background: #005F99; /* آبی تیره */
-    color: #F3F4F6; /* خاکستری روشن */
+    color: #D1D5DB; /* خاکستری کمرنگ */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -160,7 +160,7 @@ a:hover {
 
 footer {
     background: #005F99; /* آبی تیره */
-    color: #F3F4F6; /* خاکستری روشن */
+    color: #D1D5DB; /* خاکستری کمرنگ */
     padding: 20px;
     margin-top: 20px;
     transform: translateY(100%);
@@ -215,7 +215,7 @@ iframe.visible {
         right: -100%;
         width: 80%;
         height: 100%;
-        background: #F3F4F6; /* خاکستری روشن */
+        background: #D1D5DB; /* خاکستری کمرنگ */
         z-index: 1000;
         transition: right 0.3s ease;
     }
