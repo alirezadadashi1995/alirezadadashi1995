@@ -1,6 +1,7 @@
+/* نسخه جدید style.css */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -9,690 +10,16 @@ body {
 }
 
 header {
-    background: #FFA500; /* نارنجی */
-    color: #000; /* مشکی */
+    background: #FFA500;
+    color: #000;
     padding: 40px 20px;
-    position: relative;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    margin: 10px 0 0;
-    font-size: 1.2em;
 }
 
 .logo {
-    width: 150px; /* اندازه‌ی لوگو */
-    height: auto;
-    margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
-    transition: transform 0.5s ease;
-}
-
-.logo:hover {
-    transform: rotate(360deg); /* چرخش ۳۶۰ درجه */
-}
-
-.main-nav {
-    margin-top: 0; /* حذف فاصله بالا */
-    background: #FFA500; /* نارنجی */
-    position: fixed; /* ثابت کردن موقعیت */
-    top: 0; /* قرار دادن در بالای صفحه */
-    left: 0; /* قرار دادن در سمت چپ صفحه */
-    width: 100%; /* عرض کامل صفحه */
-    z-index: 1000; /* قرار دادن بالاتر از سایر عناصر */
-}
-
-
-.main-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.main-nav ul li {
-    margin: 0 15px;
-}
-
-.main-nav ul li a {
-    color: #fff; /* سفید */
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease, font-size 0.3s ease;
-}
-
-.main-nav ul li a:hover {
-    color: #FFD700; /* زرد */
-    font-size: 1.2em; /* بزرگ‌تر شدن متن هنگام هاور */
-    text-decoration: underline;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #fff; /* سفید */
-}
-
-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    color: #FFA500; /* نارنجی */
-    border-bottom: 2px solid #FFA500;
-    padding-bottom: 10px;
-}
-
-h3 {
-    color: #FFA500; /* نارنجی */
-    margin-top: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
-    font-size: 1.1em;
-}
-
-a {
-    color: #FFA500; /* نارنجی */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.button {
-    display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.button:hover {
-    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
-}
-
-.phone-button {
-    display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.phone-button:hover {
-    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
-}
-
-footer {
-    background: #4CAF50; /* سبز */
-    color: #fff;
-    padding: 20px;
-    margin-top: 20px;
-    transform: translateY(100%);
-    transition: transform 0.6s ease;
-}
-
-footer.visible {
-    transform: translateY(0);
-}
-
-footer p {
-    margin: 5px 0;
-    font-size: 1em;
-}
-
-.social-icon {
-    width: 85px; /* اندازه آیکون */
-    height: auto;
-    margin: 0 10px; /* فاصله بین آیکون‌ها */
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: scale(1.2); /* بزرگ‌تر شدن آیکون هنگام هاور */
-}
-
-iframe {
-    width: 100%;
-    height: 450px;
-    border: 0;
-    border-radius: 8px;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-iframe.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* استایل‌های موبایل */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .main-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100%;
-        background: #FFD700; /* زرد */
-        z-index: 1000;
-        transition: right 0.3s ease;
-    }
-
-    .main-nav.active {
-        display: block;
-        right: 0;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        padding-top: 60px;
-    }
-
-    .main-nav ul li {
-        margin: 15px 0;
-    }
-
-    .main-nav ul li a {
-        color: #000; /* مشکی */
-        font-size: 1.2em;
-    }
-
-    .main-nav ul li a:hover {
-        color: #FFA500; /* نارنجی */
-    }
-
-    /* پس‌زمینه تاری */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-
-    .overlay.active {
-        display: block;
-    }
-}
-
-/* استایل اسلایدر */
-.slider {
-    position: relative;
-    max-width: 100%; /* به جای ۸۰۰ پیکسل، ۱۰۰٪ از عرض صفحه */
-    height: auto;
-    aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* دکمه‌های کنترل اسلایدر */
-.slider-controls {
-    position: absolute;
-    width: 100%;
-    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
-    left: 0;
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    pointer-events: none;
-}
-
-.slider-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 5px;
-    pointer-events: all;
-}
-
-
-.slider-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#tracking {
-    background: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-#tracking input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    text-align: center;
-}
-
-#tracking button {
-    display: inline-block;
-    background: #FFA500; /* نارنجی */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-#tracking button:hover {
-    background: #FF8C00; /* رنگ کمی تیره‌تر هنگام هاور */
-    transform: scale(1.05);
-}
-
-#repairStatus {
-    margin-top: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-}
-
-/* استایل دکمه واتساپ */
-.whatsapp-button {
-    display: inline-block;
-    background: #25D366; /* رنگ سبز واتساپ */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    transform: scale(1.05);
-    background-color: #128C7E; /* رنگ تیره‌تر واتساپ */
-}
-
-#payment-receipt {
-    background: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* استایل بخش اطلاعات بانکی */
-.bank-info {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
+    width: 150px;
     margin-bottom: 20px;
-    border: 1px solid #eee;
 }
 
-.bank-info h3 {
-    color: #FFA500;
-    margin-top: 0;
-    font-size: 1.2em;
-}
-
-.bank-card {
-    background: white;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bank-card p {
-    margin: 0;
-    font-family: monospace;
-    direction: ltr;
-    text-align: left;
-}
-
-.bank-card strong {
-    color: #333;
-}
-
-.copy-button {
-    background: #FFD700;
-    color: #000;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: all 0.3s;
-}
-
-.copy-button:hover {
-    background: #FFA500;
-    transform: scale(1.05);
-}
-
-.bank-notice {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 15px;
-}
-
-@media (max-width: 768px) {
-    .bank-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .copy-button {
-        margin-top: 8px;
-        align-self: flex-end;
-    }
-}
-/* استایل بخش سفارش کالا */
-#product-order {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #000;
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-#product-order h2 {
-    color: #000;
-    border-bottom: 2px solid #000;
-}
-
-.order-steps {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.step {
-    flex: 1;
-    min-width: 250px;
-    margin: 10px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.step:hover {
-    transform: translateY(-10px);
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: #FFA500;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.order-button {
-    background: #000;
-    color: #FFD700;
-    font-weight: bold;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    margin: 20px auto;
-    display: block;
-    max-width: 300px;
-}
-
-.order-button:hover {
-    background: #333;
-    color: #FFD700;
-}
-
-.order-benefits {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-}
-
-.order-benefits h3 {
-    color: #000;
-    margin-top: 0;
-}
-
-.order-benefits ul {
-    text-align: right;
-    padding-right: 20px;
-}
-
-.order-benefits li {
-    margin: 10px 0;
-    font-size: 1.1em;
-    position: relative;
-    padding-right: 25px;
-}
-
-.order-benefits li:before {
-    content: "✓";
-    position: absolute;
-    right: 0;
-    color: green;
-    font-weight: bold;
-}
-
-@media (max-width: 768px) {
-    .order-steps {
-        flex-direction: column;
-    }
-    
-    .step {
-        margin-bottom: 20px;
-    }
-}
-/* استایل بخش خدمات تعمیرات */
-#repair-services {
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
-    color: #fff;
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-#repair-services h2 {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-}
-
-.service-steps {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.service-steps .step {
-    flex: 1;
-    min-width: 250px;
-    margin: 10px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    color: #333;
-}
-
-.service-steps .step:hover {
-    transform: translateY(-10px);
-}
-
-.service-steps .step-number {
-    background: #4CAF50;
-    color: #fff;
-}
-
-.service-benefits {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-}
-
-.service-benefits h3 {
-    color: #fff;
-    margin-top: 0;
-}
-
-.service-benefits ul {
-    text-align: right;
-    padding-right: 20px;
-    color: #fff;
-}
-
-.service-benefits li {
-    margin: 10px 0;
-    font-size: 1.1em;
-    position: relative;
-    padding-right: 25px;
-}
-
-.service-benefits li:before {
-    content: "✓";
-    position: absolute;
-    right: 0;
-    color: #FFD700;
-    font-weight: bold;
-}
-
-.repair-button {
-    background: #fff;
-    color: #4CAF50;
-    font-weight: bold;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    margin: 20px auto;
-    display: block;
-    max-width: 300px;
-}
-
-.repair-button:hover {
-    background: #f1f1f1;
-    color: #2E7D32;
-}
-
-/* استایل بخش پیگیری تعمیرات در بخش خدمات */
-#repair-request #tracking {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    color: #333;
-}
-
-#repair-request #tracking h3 {
-    color: #4CAF50;
-    margin-top: 0;
-}
-
-#repair-request #tracking input {
-    width: 70%;
-    margin: 10px auto;
-}
-
-#repair-request #tracking button {
-    background: #4CAF50;
-    color: #fff;
-}
-
-#repair-request #tracking button:hover {
-    background: #2E7D32;
-}
-
-/* استایل‌های جدید برای دکمه‌های اصلی */
 .main-actions {
     max-width: 1000px;
     margin: 30px auto;
@@ -714,42 +41,29 @@ iframe.visible {
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
     font-size: 1.3em;
+    font-weight: bold;
+    color: #000;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.action-button span {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.action-button p {
-    margin: 0;
-    font-size: 0.9em;
-    font-weight: normal;
-    opacity: 0.9;
 }
 
 .repair-button {
-    background: #FFA500;
-    border: 2px solid #FF8C00;
+    background: #000;
+    color: #FFD700;
+    border: 2px solid #FFD700;
 }
 
 .buy-button {
-    background: #FFD700;
-    border: 2px solid #FFA500;
+    background: #000;
+    color: #FFD700;
+    border: 2px solid #FFD700;
 }
 
 .action-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .secondary-actions {
@@ -760,6 +74,8 @@ iframe.visible {
 }
 
 .secondary-button {
+    background: #4CAF50;
+    color: #fff;
     padding: 15px 30px;
     border-radius: 8px;
     text-decoration: none;
@@ -767,98 +83,86 @@ iframe.visible {
     transition: all 0.3s ease;
 }
 
-.payment-button {
-    background: #4CAF50;
-    color: white;
-}
-
-.contact-button {
-    background: #2196F3;
-    color: white;
-}
-
 .secondary-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* استایل‌های جدید برای بخش پرداخت */
-.payment-section {
-    background: #f9f9f9;
-    padding: 30px 0;
-}
-
-.payment-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.payment-card {
-    background: white;
+section {
+    background: #fff;
+    padding: 30px 20px;
+    margin: 30px auto;
+    max-width: 1000px;
     border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.bank-card {
-    background: #f5f5f5;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h2 {
+    color: #FFA500;
+    border-bottom: 2px solid #FFA500;
+    padding-bottom: 10px;
 }
 
-.bank-details {
-    text-align: right;
+#repair-services {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #fff;
 }
 
-.bank-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
+#repair-services h2, #repair-services h3 {
+    color: #fff;
 }
 
-.bank-value {
-    font-family: monospace;
-    font-size: 1.1em;
-    direction: ltr;
-    text-align: left;
-}
-
-.whatsapp-button {
+#repair-request .button.new-repair-button {
     display: inline-block;
-    background: #25D366;
-    color: white;
+    background: #4CAF50;
+    color: #fff;
     padding: 15px 30px;
     border-radius: 8px;
+    font-size: 1.2em;
+    margin-top: 20px;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.whatsapp-button:hover {
-    background: #128C7E;
+#repair-request .button.new-repair-button:hover {
+    background: #2E7D32;
     transform: scale(1.05);
 }
 
-/* رسپانسیو */
-@media (max-width: 768px) {
-    .action-button {
-        min-width: 100%;
-    }
-    
-    .bank-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .copy-button {
-        margin-top: 10px;
-        align-self: flex-end;
-    }
+#tracking {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+}
+
+#tracking input {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#tracking button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#tracking button:hover {
+    background: #2E7D32;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 40px;
 }
