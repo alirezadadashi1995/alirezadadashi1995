@@ -369,103 +369,8 @@ iframe.visible {
     color: #333;
 }
 
-/* استایل دکمه واتساپ */
-.whatsapp-button {
-    display: inline-block;
-    background: #25D366; /* رنگ سبز واتساپ */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
 
-.whatsapp-button:hover {
-    transform: scale(1.05);
-    background-color: #128C7E; /* رنگ تیره‌تر واتساپ */
-}
 
-#payment-receipt {
-    background: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* استایل بخش اطلاعات بانکی */
-.bank-info {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-}
-
-.bank-info h3 {
-    color: #FFA500;
-    margin-top: 0;
-    font-size: 1.2em;
-}
-
-.bank-card {
-    background: white;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bank-card p {
-    margin: 0;
-    font-family: monospace;
-    direction: ltr;
-    text-align: left;
-}
-
-.bank-card strong {
-    color: #333;
-}
-
-.copy-button {
-    background: #FFD700;
-    color: #000;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: all 0.3s;
-}
-
-.copy-button:hover {
-    background: #FFA500;
-    transform: scale(1.05);
-}
-
-.bank-notice {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 15px;
-}
-
-@media (max-width: 768px) {
-    .bank-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .copy-button {
-        margin-top: 8px;
-        align-self: flex-end;
-    }
-}
 
 /* استایل بخش سفارش کالا */
 #product-order {
@@ -653,8 +558,8 @@ iframe.visible {
 }
 
 .repair-button {
-    background: #fff;
-    color: #f4f4f4;
+    background: #FFD700;
+    color: #000000;
     font-weight: bold;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -664,7 +569,7 @@ iframe.visible {
 }
 
 .repair-button:hover {
-    background: #f1f1f1;
+    background: #000000;
     color: #2E7D32;
 }
 
@@ -781,95 +686,4 @@ iframe.visible {
     outline: none;
 }
 
-/* استایل‌های جدید برای دکمه‌های اصلی */
-.main-actions {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
 
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-/* اصلاح استایل دکمه‌های اصلی */
-.action-button {
-    min-height: 120px; /* ارتفاع ثابت */
-    box-sizing: border-box;
-    text-align: center;
-    word-break: keep-all; /* جلوگیری از شکستن کلمات */
-}
-
-.action-button span {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.action-button p {
-    margin: 0;
-    font-size: 0.9em;
-    font-weight: normal;
-    opacity: 0.9;
-}
-
-.repair-button {
-    background: #FFA500;
-    border: 2px solid #FF8C00;
-}
-
-.buy-button {
-    background: #FFD700;
-    border: 2px solid #FFA500;
-}
-
-.action-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.secondary-actions {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* اصلاح استایل دکمه‌های ثانویه */
-.secondary-button {
-    min-width: 180px; /* عرض حداقلی */
-    white-space: nowrap; /* جلوگیری از چندخطی شدن */
-    text-align: center;
-    padding: 15px 25px;
-}
-
-.payment-button {
-    background: #4CAF50;
-    color: white;
-}
-
-.contact-button {
-    background: #2196F3;
-    color: white;
-}
-
-.secondary-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-/* رسپانسیو برای موبایل */
-@media (max-width: 480px) {
-    .action-button {
-        min-height: 100px;
-        padding: 15px;
-        font-size: 1.1em;
-    }
-    
-    .secondary-button {
-        min-width: 140px;
-        padding: 12px 20px;
-    }
-}
