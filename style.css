@@ -635,3 +635,123 @@ iframe.visible {
         align-self: flex-end;
     }
 }
+
+/* استایل بخش خدمات تعمیرات */
+#repair-services {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #fff;
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#repair-services h2 {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.service-steps {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.service-steps .step {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: #333;
+}
+
+.service-steps .step:hover {
+    transform: translateY(-10px);
+}
+
+.service-steps .step-number {
+    background: #4CAF50;
+    color: #fff;
+}
+
+.service-benefits {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.service-benefits h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.service-benefits ul {
+    text-align: right;
+    padding-right: 20px;
+    color: #fff;
+}
+
+.service-benefits li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    position: relative;
+    padding-right: 25px;
+}
+
+.service-benefits li:before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.repair-button {
+    background: #fff;
+    color: #4CAF50;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 20px auto;
+    display: block;
+    max-width: 300px;
+}
+
+.repair-button:hover {
+    background: #f1f1f1;
+    color: #2E7D32;
+}
+
+/* استایل بخش پیگیری تعمیرات در بخش خدمات */
+#repair-request #tracking {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #333;
+}
+
+#repair-request #tracking h3 {
+    color: #4CAF50;
+    margin-top: 0;
+}
+
+#repair-request #tracking input {
+    width: 70%;
+    margin: 10px auto;
+}
+
+#repair-request #tracking button {
+    background: #4CAF50;
+    color: #fff;
+}
+
+#repair-request #tracking button:hover {
+    background: #2E7D32;
+}
