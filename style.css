@@ -796,22 +796,12 @@ iframe.visible {
     flex-wrap: wrap;
 }
 
+/* اصلاح استایل دکمه‌های اصلی */
 .action-button {
-    flex: 1;
-    min-width: 300px;
-    padding: 25px;
-    border-radius: 10px;
+    min-height: 120px; /* ارتفاع ثابت */
+    box-sizing: border-box;
     text-align: center;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    font-size: 1.3em;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    word-break: keep-all; /* جلوگیری از شکستن کلمات */
 }
 
 .action-button span {
@@ -848,12 +838,12 @@ iframe.visible {
     flex-wrap: wrap;
 }
 
+/* اصلاح استایل دکمه‌های ثانویه */
 .secondary-button {
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    min-width: 180px; /* عرض حداقلی */
+    white-space: nowrap; /* جلوگیری از چندخطی شدن */
+    text-align: center;
+    padding: 15px 25px;
 }
 
 .payment-button {
@@ -870,4 +860,16 @@ iframe.visible {
     transform: scale(1.05);
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
-
+/* رسپانسیو برای موبایل */
+@media (max-width: 480px) {
+    .action-button {
+        min-height: 100px;
+        padding: 15px;
+        font-size: 1.1em;
+    }
+    
+    .secondary-button {
+        min-width: 140px;
+        padding: 12px 20px;
+    }
+}
