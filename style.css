@@ -871,9 +871,3 @@ iframe.visible {
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
-/* رسپانسیو */
-@media (max-width: 768px) {
-    .action-button {
-        min-width: 100%;
-    }
-}
