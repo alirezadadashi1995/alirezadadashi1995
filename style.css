@@ -268,8 +268,35 @@ iframe.visible {
     transition: opacity 0.5s ease-in-out;
 }
 
+/* استایل‌های اختصاصی برای اسلاید اول (لوگو و متن) */
 .slide.active {
-    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #FFA500; /* رنگ پس‌زمینه مشابه هدر */
+}
+
+.slide.active .logo {
+    width: 150px; /* اندازه مناسب برای لوگو */
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.slide.active h1 {
+    font-size: 2em; /* اندازه مناسب برای عنوان */
+    color: #000;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.slide.active p {
+    font-size: 1.2em; /* اندازه مناسب برای متن توضیحی */
+    color: #000;
+    margin: 10px 0 0;
 }
 
 .slide img {
@@ -861,4 +888,29 @@ iframe.visible {
         font-size: 0.8em;
         display: inline; /* نمایش متن در صورت فضای کافی */
     }
+}
+/* تنظیمات واکنش‌گرا برای موبایل */
+@media (max-width: 768px) {
+    .slide.active .logo {
+        width: 100px;
+    }
+    
+    .slide.active h1 {
+        font-size: 1.5em;
+    }
+    
+    .slide.active p {
+        font-size: 1em;
+    }
+}
+
+/* تنظیمات کلی اسلایدر */
+.slider {
+    height: 400px; /* ارتفاع ثابت برای اسلایدر */
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
