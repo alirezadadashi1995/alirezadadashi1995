@@ -14,6 +14,7 @@ header {
     padding: 40px 20px;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
 header h1 {
@@ -45,6 +46,7 @@ header p {
     left: 0; /* قرار دادن در سمت چپ صفحه */
     width: 100%; /* عرض کامل صفحه */
     z-index: 1000; /* قرار دادن بالاتر از سایر عناصر */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 
@@ -60,18 +62,55 @@ header p {
     margin: 0 15px;
 }
 
+/* آیکون‌های فونت-آوسام */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 .main-nav ul li a {
-    color: #fff; /* سفید */
+    color: #fff;
     text-decoration: none;
     font-size: 1.1em;
-    transition: color 0.3s ease, font-size 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .main-nav ul li a:hover {
-    color: #FFD700; /* زرد */
-    font-size: 1.2em; /* بزرگ‌تر شدن متن هنگام هاور */
-    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
+
+.main-nav ul li a i {
+    font-size: 1.2em;
+}
+
+/* رنگ‌های متفاوت برای هر دکمه */
+.main-nav ul li:nth-child(1) a {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+}
+
+.main-nav ul li:nth-child(2) a {
+    background: linear-gradient(135deg, #4ECDC4, #88DAC7);
+}
+
+.main-nav ul li:nth-child(3) a {
+    background: linear-gradient(135deg, #FFD166, #FFB347);
+}
+
+.main-nav ul li:nth-child(4) a {
+    background: linear-gradient(135deg, #06D6A0, #48BFE3);
+}
+
+.main-nav ul li a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 
 .menu-icon {
     display: none;
@@ -208,63 +247,6 @@ iframe.visible {
     transform: scale(1);
 }
 
-/* استایل‌های موبایل */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .main-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100%;
-        background: #FFD700; /* زرد */
-        z-index: 1000;
-        transition: right 0.3s ease;
-    }
-
-    .main-nav.active {
-        display: block;
-        right: 0;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        padding-top: 60px;
-    }
-
-    .main-nav ul li {
-        margin: 15px 0;
-    }
-
-    .main-nav ul li a {
-        color: #000; /* مشکی */
-        font-size: 1.2em;
-    }
-
-    .main-nav ul li a:hover {
-        color: #FFA500; /* نارنجی */
-    }
-
-    /* پس‌زمینه تاری */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-
-    .overlay.active {
-        display: block;
-    }
-}
 
 /* استایل اسلایدر */
 .slider {
@@ -423,20 +405,30 @@ iframe.visible {
     font-size: 1.2em;
 }
 
+/* دکمه ثبت سفارش کالا */
 .order-button {
-    background: #000;
-    color: #FFD700;
+    display: inline-block;
+    background: linear-gradient(135deg, #4ECDC4, #88DAC7);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.3em;
     font-weight: bold;
-    padding: 15px 30px;
-    font-size: 1.2em;
     margin: 20px auto;
-    display: block;
-    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
 }
 
 .order-button:hover {
-    background: #333;
-    color: #FFD700;
+    background: linear-gradient(135deg, #88DAC7, #4ECDC4);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(78, 205, 196, 0.6);
 }
 
 .order-benefits {
@@ -469,16 +461,6 @@ iframe.visible {
     right: 0;
     color: green;
     font-weight: bold;
-}
-
-@media (max-width: 768px) {
-    .order-steps {
-        flex-direction: column;
-    }
-    
-    .step {
-        margin-bottom: 20px;
-    }
 }
 
 /* استایل بخش خدمات تعمیرات */
@@ -557,20 +539,30 @@ iframe.visible {
     font-weight: bold;
 }
 
+/* دکمه ثبت درخواست تعمیر */
 .repair-button {
-    background: #FFD700;
-    color: #000000;
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.3em;
     font-weight: bold;
-    padding: 15px 30px;
-    font-size: 1.2em;
     margin: 20px auto;
-    display: block;
-    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
 }
 
 .repair-button:hover {
-    background: #000000;
-    color: #2E7D32;
+    background: linear-gradient(135deg, #FF8E8E, #FF6B6B);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
 }
 
 /* استایل بخش پیگیری تعمیرات در بخش خدمات */
@@ -703,6 +695,129 @@ iframe.visible {
     margin-top: 15px;
 }
 
+
+
+/* استایل اصلی آیکون پشتیبانی */
+.whatsapp-support {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* تغییر از left به right برای سمت راست */
+    z-index: 9999;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-support a {
+    display: flex;
+    align-items: center;
+    background: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-support a:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px; /* فاصله بین آیکون و متن */
+}
+
+.support-text {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* انیمیشن پالس برای جلب توجه */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* استایل‌های موبایل */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100%;
+        background: #FFD700; /* زرد */
+        z-index: 1000;
+        transition: right 0.3s ease;
+    }
+
+    .main-nav.active {
+        display: block;
+        right: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    .main-nav ul li {
+        margin: 15px 0;
+    }
+
+    .main-nav ul li a {
+        color: #000; /* مشکی */
+        font-size: 1.2em;
+    }
+
+    .main-nav ul li a:hover {
+        color: #FFA500; /* نارنجی */
+    }
+    
+    /* پس‌زمینه تاری */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-steps {
+        flex-direction: column;
+    }
+    
+    .step {
+        margin-bottom: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .bank-card {
         flex-direction: column;
@@ -711,5 +826,39 @@ iframe.visible {
     .copy-button {
         margin-top: 8px;
         align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    /* دکمه‌های ثبت درخواست */
+    .repair-button, .order-button {
+        padding: 12px 20px;
+        font-size: 1em;
+        max-width: 90%;
+        margin: 15px auto;
+    }
+}
+/* حالت موبایل */
+@media (max-width: 768px) {
+    .whatsapp-support {
+        bottom: 15px;
+        right: 15px;
+        width: auto; /* عرض خودکار */
+    }
+    
+    .whatsapp-support a {
+        padding: 8px 12px;
+        width: auto; /* جلوگیری از کشیده شدن */
+    }
+    
+    .whatsapp-icon {
+        width: 35px;
+        height: 35px;
+        margin-left: 0; /* حذف margin اضافه */
+    }
+    
+    .support-text {
+        font-size: 0.8em;
+        display: inline; /* نمایش متن در صورت فضای کافی */
     }
 }
