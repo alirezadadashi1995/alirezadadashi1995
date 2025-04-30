@@ -28,9 +28,9 @@ header p {
 }
 
 .logo {
-    width: 150px; /* اندازه‌ی لوگو */
+    width: 5px; /* اندازه‌ی لوگو */
     height: auto;
-    margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
+    margin-bottom: 5px; /* فاصله‌ی لوگو از متن */
     transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
