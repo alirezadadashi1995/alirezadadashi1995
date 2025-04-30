@@ -248,55 +248,33 @@ iframe.visible {
 }
 
 
-/* استایل اسلایدر */
+/* استایل‌های اسلایدر */
 .slider {
     position: relative;
-    max-width: 100%; /* به جای ۸۰۰ پیکسل، ۱۰۰٪ از عرض صفحه */
-    height: auto;
-    aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
-    margin: 20px auto;
+    width: 100%;
+    height: 500px; /* ارتفاع ثابت برای اسلایدر */
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .slide {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-}
-
-/* استایل‌های اختصاصی برای اسلاید اول (لوگو و متن) */
-.slide.active {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
-    background-color: #FFA500; /* رنگ پس‌زمینه مشابه هدر */
 }
 
-.slide.active .logo {
-    width: 150px; /* اندازه مناسب برای لوگو */
-    height: auto;
-    margin-bottom: 20px;
-    transition: transform 0.5s ease;
-}
-
-.slide.active h1 {
-    font-size: 2em; /* اندازه مناسب برای عنوان */
-    color: #000;
-    margin: 10px 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.slide.active p {
-    font-size: 1.2em; /* اندازه مناسب برای متن توضیحی */
-    color: #000;
-    margin: 10px 0 0;
+.slide.active {
+    opacity: 1;
 }
 
 .slide img {
@@ -304,18 +282,38 @@ iframe.visible {
     height: 100%;
     object-fit: cover;
 }
+/* استایل برای اسلاید اول (لوگو و متن) */
+.slide.active .logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.slide.active h1 {
+    font-size: 2em;
+    color: #000;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.slide.active p {
+    font-size: 1.2em;
+    color: #000;
+    margin: 10px 0 0;
+}
 
 /* دکمه‌های کنترل اسلایدر */
 .slider-controls {
     position: absolute;
     width: 100%;
-    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
+    top: 50%;
     left: 0;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
-    pointer-events: none;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .slider-controls button {
@@ -326,12 +324,16 @@ iframe.visible {
     cursor: pointer;
     font-size: 1.5em;
     border-radius: 5px;
-    pointer-events: all;
+    transition: background-color 0.3s ease;
 }
-
 
 .slider-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* استایل برای اسلایدهای تصویری */
+.slide:not(.active) {
+    background-color: #FFA500;
 }
 
 #tracking {
