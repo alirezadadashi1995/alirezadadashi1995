@@ -190,12 +190,12 @@ a:hover {
     display: inline-block;
     background: #FFD700; /* زرد */
     color: #000; /* مشکی */
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 15px 30px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
 }
 
 .phone-button:hover {
