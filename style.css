@@ -256,7 +256,7 @@ iframe.visible {
     aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
     margin: 0px auto;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
