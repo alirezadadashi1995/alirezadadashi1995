@@ -658,6 +658,7 @@ iframe.visible {
     font-weight: bold;
     margin-top: 20px;
     transition: all 0.3s;
+    animation: pulse 2s infinite;
 }
 
 .whatsapp-button:hover {
