@@ -196,6 +196,7 @@ a:hover {
     font-weight: bold;
     margin-top: 20px;
     transition: all 0.3s;
+    animation: pulse 2s infinite;
 }
 
 .phone-button:hover {
@@ -423,6 +424,7 @@ iframe.visible {
     text-align: center;
     max-width: 350px;
     width: 100%;
+    animation: pulse 2s infinite;
 }
 
 .order-button:hover {
@@ -557,6 +559,7 @@ iframe.visible {
     text-align: center;
     max-width: 350px;
     width: 100%;
+    animation: pulse 2s infinite;
 }
 
 .repair-button:hover {
