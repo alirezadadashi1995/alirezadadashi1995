@@ -204,8 +204,8 @@ a:hover {
 }
 
 footer {
-    background: #4CAF50; /* سبز */
-    color: #fff;
+    background: #FFA500; /*4CAF50 سبز */
+    color: #000;
     padding: 20px;
     margin-top: 20px;
     transform: translateY(100%);
