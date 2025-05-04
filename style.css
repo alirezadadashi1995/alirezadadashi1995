@@ -281,8 +281,8 @@ iframe.visible {
 
 /* متن در سمت راست */
 .slide-text {
-  flex: 0 0 40%;
-  text-align: right;
+  flex: 0 0 50%;
+  text-align: center;
   padding-left: 20px;
 }
 
@@ -296,7 +296,7 @@ iframe.visible {
 
 /* عکس در سمت چپ و بزرگ‌تر */
 .slide-image {
-  flex: 0 0 60%;
+  flex: 0 0 50%;
   display: flex;
   justify-content: center;
   align-items: center;
