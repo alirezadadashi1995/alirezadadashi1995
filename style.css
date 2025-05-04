@@ -288,9 +288,12 @@ iframe.visible {
 }
 
 .slide-image img {
-  max-height: 80%;
+  max-height: 300px;
   max-width: 100%;
+  width: auto;
+  height: auto;
   border-radius: 15px;
+  object-fit: contain;
 }
 
 /* انیمیشن ساده هنگام تعویض اسلاید */
