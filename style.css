@@ -279,11 +279,11 @@ iframe.visible {
   box-sizing: border-box;
 }
 
+/* متن در سمت راست */
 .slide-text {
-  flex: 1;
+  flex: 0 0 40%;
   text-align: right;
   padding-left: 20px;
-  max-width: 33.33%;
 }
 
 .slide-text h1 {
@@ -291,22 +291,24 @@ iframe.visible {
   font-weight: bold;
   color: white;
   line-height: 1.5;
+  text-align: right;
 }
 
+/* عکس در سمت چپ و بزرگ‌تر */
 .slide-image {
-  flex: 1;
-  max-width: 33.33%;
+  flex: 0 0 60%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .slide-image img {
-  max-height: 200px; /* قبلاً 80% بود */
+  max-height: 300px;
   max-width: 100%;
   object-fit: contain;
   border-radius: 15px;
 }
+
 
 /* انیمیشن ساده */
 @keyframes fade {
