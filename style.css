@@ -250,62 +250,53 @@ iframe.visible {
 
 
 /* استایل اسلایدر */
-.slider {
-    position: relative;
-    max-width: 100%; /* به جای ۸۰۰ پیکسل، ۱۰۰٪ از عرض صفحه */
-    height: auto;
-    aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
-    margin: 0px auto;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: orange;
 }
+
 .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+  display: none;
+  width: 100%;
+  height: 350px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .slide.active {
-    opacity: 1;
+  display: flex;
+  animation: fade 1s;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.slide-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 5%;
+  align-items: center;
+  height: 100%;
 }
 
-/* دکمه‌های کنترل اسلایدر */
-.slider-controls {
-    position: absolute;
-    width: 100%;
-    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
-    left: 0;
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    pointer-events: none;
+.slide-text h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  max-width: 50%;
 }
 
-.slider-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 5px;
-    pointer-events: all;
+.slide-image img {
+  max-height: 80%;
+  max-width: 100%;
+  border-radius: 15px;
 }
 
-
-.slider-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+/* انیمیشن ساده هنگام تعویض اسلاید */
+@keyframes fade {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
 }
 
 #tracking {
