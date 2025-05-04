@@ -335,7 +335,10 @@ iframe.visible {
   }
 
   .slide-image img {
-    max-height: 200px;
+    max-height: 200px; /* قبلاً 80% بود */
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 15px;
   }
 }
 
