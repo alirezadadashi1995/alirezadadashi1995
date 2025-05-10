@@ -279,6 +279,87 @@
     <img src="images/logo.png" alt="لوگوی مرکز تعمیرات راچار" class="logo">
 
     </footer>
+ <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.main-nav');
+      nav.classList.toggle('active');
+      const overlay = document.querySelector('.overlay');
+      overlay.classList.toggle('active');
+    }
+  </script>
+      
+ <script>
+        // بستن منو پس از کلیک روی یک لینک
+        document.querySelectorAll('.main-nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+
+        // انیمیشن اسکرول برای بخش‌ها
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const iframe = document.querySelector("iframe");
+            const footer = document.querySelector("footer");
+
+            const checkVisibility = () => {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionBottom = section.getBoundingClientRect().bottom;
+
+                    if (sectionTop < window.innerHeight && sectionBottom > 0) {
+                        section.classList.add("visible");
+                    }
+                });
+
+                const iframeTop = iframe.getBoundingClientRect().top;
+                const iframeBottom = iframe.getBoundingClientRect().bottom;
+
+                if (iframeTop < window.innerHeight && iframeBottom > 0) {
+                    iframe.classList.add("visible");
+                }
+
+                const footerTop = footer.getBoundingClientRect().top;
+
+                if (footerTop < window.innerHeight) {
+                    footer.classList.add("visible");
+                }
+            };
+
+            window.addEventListener("scroll", checkVisibility);
+            checkVisibility(); // بررسی اولیه
+        });
+
+
+      
+    </script>
+    <script src="script.js"></script>
+
+
+
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
+  }
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+  // شروع اولیه
+  showSlide(currentSlide);
+  // اسلاید بعدی هر 5 ثانیه
+  setInterval(nextSlide, 5000);
+</script>
+
+  
       <!-- دکمه‌های شناور -->
       <div class="floating-buttons right">
           <a href="https://forms.gle/wQPy2R4qM4FWVbq68" class="floating-btn">
@@ -301,11 +382,6 @@
               <span>تماس با ما</span>
           </a>
       </div>
-
-
-  <script src="script.js"></script>
-  
-
   
 </body>
 </html>
