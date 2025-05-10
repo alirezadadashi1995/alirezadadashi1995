@@ -860,7 +860,7 @@ iframe.visible {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  z-index: 9998;
+  z-index: 9999; /* افزایش z-index برای اطمینان از نمایش روی همه عناصر */
 }
 
 .floating-button {
@@ -879,6 +879,7 @@ iframe.visible {
   font-weight: bold;
   font-size: 0.9em;
   animation: pulse 2s infinite;
+  position: relative; /* اضافه کردن position relative */
 }
 
 .floating-button a:hover {
@@ -928,9 +929,8 @@ iframe.visible {
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
-  z-index: 9998;
+  z-index: 9999;
 }
-
 .top-button a {
   display: flex;
   align-items: center;
@@ -943,6 +943,7 @@ iframe.visible {
   font-weight: bold;
   font-size: 0.9em;
   animation: pulse 2s infinite;
+  position: relative; /* اضافه کردن position relative */
 }
 
 .top-button a:hover {
@@ -998,6 +999,7 @@ iframe.visible {
     padding: 10px 15px;
     font-size: 0.8em;
   }
+}
   
   .right-buttons {
     right: 10px;
@@ -1015,7 +1017,7 @@ iframe.visible {
   }
   
   .top-button a {
-    padding: 8px 12px;
+    padding: 10px 15px;
     font-size: 0.8em;
   }
   
@@ -1023,4 +1025,10 @@ iframe.visible {
     margin-left: 5px;
     font-size: 1em;
   }
+}
+
+
+/* اطمینان از عدم تداخل با سایر عناصر */
+body {
+  padding-bottom: 150px; /* فضای اضافه در پایین برای جلوگیری از همپوشانی */
 }
