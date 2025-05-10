@@ -805,8 +805,10 @@ iframe.visible {
     }
     
     .floating-btn {
-        padding: 10px 15px;
-        font-size: 13px;
+        color: white; /* رنگ متن */
+        -webkit-text-stroke: 2px black; /* ضخامت و رنگ استروک */
+        font-size: 48px;
+        font-weight: bold;
     }
     
     .floating-btn i {
