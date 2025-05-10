@@ -754,60 +754,6 @@ iframe.visible {
 }
 
 
-
-/* استایل اصلی آیکون پشتیبانی */
-.whatsapp-support {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* تغییر از left به right برای سمت راست */
-    z-index: 9999;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-support a {
-    display: flex;
-    align-items: center;
-    background: #25D366;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.whatsapp-support a:hover {
-    background: #128C7E;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 10px; /* فاصله بین آیکون و متن */
-}
-
-.support-text {
-    font-weight: bold;
-    font-size: 1em;
-}
-
-/* انیمیشن پالس برای جلب توجه */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-
 /* استایل‌های موبایل */
 @media (max-width: 768px) {
     .menu-icon {
@@ -899,33 +845,182 @@ iframe.visible {
         margin: 15px auto;
     }
 }
-/* حالت موبایل */
-@media (max-width: 768px) {
-    .whatsapp-support {
-        bottom: 15px;
-        right: 15px;
-        width: auto; /* عرض خودکار */
-    }
-    
-    .whatsapp-support a {
-        padding: 8px 12px;
-        width: auto; /* جلوگیری از کشیده شدن */
-    }
-    
-    .whatsapp-icon {
-        width: 35px;
-        height: 35px;
-        margin-left: 0; /* حذف margin اضافه */
-    }
-    
-    .support-text {
-        font-size: 0.8em;
-        display: inline; /* نمایش متن در صورت فضای کافی */
-    }
-}
+
 /* فقط در صفحه‌های کوچک (موبایل) نمایش داده شود */
 @media (max-width: 768px) {
   .close-btn {
     display: block;
+  }
+}
+
+
+/* استایل کلی دکمه‌های شناور */
+.floating-buttons {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9998;
+}
+
+.floating-button {
+  position: relative;
+}
+
+.floating-button a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  animation: pulse 2s infinite;
+}
+
+.floating-button a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button i {
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+
+/* دکمه‌های سمت راست */
+.right-buttons {
+  bottom: 20px;
+  right: 20px;
+}
+
+.repair-button a {
+  background: linear-gradient(135deg, #FF416C, #FF4B2B);
+}
+
+.order-button a {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+}
+
+/* دکمه‌های سمت چپ */
+.left-buttons {
+  bottom: 20px;
+  left: 20px;
+}
+
+.track-repair-button a {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.track-order-button a {
+  background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+}
+
+/* دکمه‌های بالای صفحه */
+.top-floating-buttons {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 9998;
+}
+
+.top-button a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  animation: pulse 2s infinite;
+}
+
+.top-button a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top-button i {
+  margin-left: 8px;
+  font-size: 1.1em;
+}
+
+.support-button a {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.contact-button a {
+  background: linear-gradient(135deg, #607D8B, #455A64);
+}
+
+/* انیمیشن‌ها */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+  .floating-buttons {
+    gap: 10px;
+  }
+  
+  .floating-button a {
+    padding: 10px 15px;
+    font-size: 0.8em;
+  }
+  
+  .right-buttons {
+    right: 10px;
+    bottom: 10px;
+  }
+  
+  .left-buttons {
+    left: 10px;
+    bottom: 10px;
+  }
+  
+  .top-floating-buttons {
+    padding: 0 10px;
+    top: 10px;
+  }
+  
+  .top-button a {
+    padding: 8px 12px;
+    font-size: 0.8em;
+  }
+  
+  .floating-button i, .top-button i {
+    margin-left: 5px;
+    font-size: 1em;
   }
 }
