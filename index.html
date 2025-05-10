@@ -279,16 +279,15 @@
     <img src="images/logo.png" alt="لوگوی مرکز تعمیرات راچار" class="logo">
 
     </footer>
- <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.main-nav');
-      nav.classList.toggle('active');
-      const overlay = document.querySelector('.overlay');
-      overlay.classList.toggle('active');
-    }
-  </script>
-      
- <script>
+  
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+            const overlay = document.querySelector('.overlay');
+            overlay.classList.toggle('active');
+        }
+
         // بستن منو پس از کلیک روی یک لینک
         document.querySelectorAll('.main-nav ul li a').forEach(link => {
             link.addEventListener('click', () => {
@@ -335,9 +334,15 @@
     </script>
     <script src="script.js"></script>
 
+    <!-- آیکون پشتیبانی واتساپ -->
+    <div class="whatsapp-support">
+      <a href="https://wa.me/989123213854" target="_blank" rel="noopener noreferrer">
+          <img src="images/whatsapp-icon.png" alt="پشتیبانی واتساپ" class="whatsapp-icon">
+          <span class="support-text">پشتیبانی آنلاین</span>
+      </a>
+    </div>
 
-
-<script>
+      <script>
   let slides = document.querySelectorAll('.slide');
   let currentSlide = 0;
 
@@ -359,12 +364,5 @@
   setInterval(nextSlide, 5000);
 </script>
 
-    <!-- آیکون پشتیبانی واتساپ -->
-    <div class="whatsapp-support">
-      <a href="https://wa.me/989123213854" target="_blank" rel="noopener noreferrer">
-          <img src="images/whatsapp-icon.png" alt="پشتیبانی واتساپ" class="whatsapp-icon">
-          <span class="support-text">پشتیبانی آنلاین</span>
-      </a>
-    </div>
 </body>
 </html>
