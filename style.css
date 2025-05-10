@@ -733,7 +733,6 @@ iframe.visible {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
-    -webkit-text-stroke: 2px black; /* ضخامت و رنگ استروک */
 }
 
 .floating-btn i {
@@ -806,10 +805,8 @@ iframe.visible {
     }
     
     .floating-btn {
-        color: white; /* رنگ متن */
-        -webkit-text-stroke: 2px black; /* ضخامت و رنگ استروک */
-        font-size: 48px;
-        font-weight: bold;
+        padding: 10px 15px;
+        font-size: 13px;
     }
     
     .floating-btn i {
@@ -817,4 +814,3 @@ iframe.visible {
         margin-left: 6px;
     }
 }
-
