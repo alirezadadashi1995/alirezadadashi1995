@@ -736,6 +736,11 @@ iframe.visible {
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
 }
+.floating-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
 
 .floating-btn i {
     margin-left: 8px;
@@ -744,19 +749,19 @@ iframe.visible {
 
 /* رنگ‌بندی دکمه‌ها */
 .floating-buttons.right .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #FF8C00, #FFA500);
+    background: linear-gradient(135deg, #FFA726, #FB8C00); /* نارنجی روشن‌تر */
 }
 
 .floating-buttons.right .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #FFD700, #FFC000);
+    background: linear-gradient(135deg, #FFEE58, #FFD54F); /* زرد روشن‌تر */
 }
 
 .floating-buttons.left .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #25D366, #128C7E);
+    background: linear-gradient(135deg, #25D366, #00BFA5); /* سبز واتساپ + تورquoise */
 }
 
 .floating-buttons.left .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #E53935, #C62828);
+    background: linear-gradient(135deg, #EF5350, #D32F2F); /* قرمز روشن‌تر */
 }
 
 /* انیمیشن‌ها */
