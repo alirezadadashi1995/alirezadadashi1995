@@ -90,30 +90,20 @@ header p {
 }
 
 /* رنگ‌های متفاوت برای هر دکمه */
-/* رنگ‌های متعادل، شاد و نه‌چندان تیره */
 .main-nav ul li:nth-child(1) a {
-    background: linear-gradient(135deg, #E63946, #FF6B6B); /* قرمز شاد ملایم */
-    color: white;
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
 }
 
 .main-nav ul li:nth-child(2) a {
-    background: linear-gradient(135deg, #2A9D8F, #52B69A); /* سبز-آبی متعادل */
-    color: white;
+    background: linear-gradient(135deg, #4ECDC4, #88DAC7);
 }
 
 .main-nav ul li:nth-child(3) a {
-    background: linear-gradient(135deg, #F4A261, #FFB566); /* نارنجی-هلویی ملایم */
-    color: white;
+    background: linear-gradient(135deg, #FFD166, #FFB347);
 }
 
 .main-nav ul li:nth-child(4) a {
-    background: linear-gradient(135deg, #457B9D, #5FA8D3); /* آبی آرام ولی واضح */
-    color: white;
-}
-
-.main-nav ul li:nth-child(5) a {
-    background: linear-gradient(135deg, #6A4C93, #9D73C6); /* بنفش ملایم و متفاوت */
-    color: white;
+    background: linear-gradient(135deg, #06D6A0, #48BFE3);
 }
 
 .main-nav ul li a:hover {
@@ -149,6 +139,7 @@ header p {
 section {
     padding: 20px;
     margin: 20px auto;
+    max-width: 800px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -764,6 +755,59 @@ iframe.visible {
 
 
 
+/* استایل اصلی آیکون پشتیبانی */
+.whatsapp-support {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* تغییر از left به right برای سمت راست */
+    z-index: 9999;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-support a {
+    display: flex;
+    align-items: center;
+    background: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-support a:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px; /* فاصله بین آیکون و متن */
+}
+
+.support-text {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* انیمیشن پالس برای جلب توجه */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
 /* استایل‌های موبایل */
 @media (max-width: 768px) {
     .menu-icon {
@@ -853,206 +897,6 @@ iframe.visible {
         font-size: 1em;
         max-width: 90%;
         margin: 15px auto;
-    }
-}
-/* حالت موبایل */
-@media (max-width: 768px) {
-    .whatsapp-support {
-        bottom: 15px;
-        right: 15px;
-        width: auto; /* عرض خودکار */
-    }
-    
-    .whatsapp-support a {
-        padding: 8px 12px;
-        width: auto; /* جلوگیری از کشیده شدن */
-    }
-    
-    .whatsapp-icon {
-        width: 35px;
-        height: 35px;
-        margin-left: 0; /* حذف margin اضافه */
-    }
-    
-    .support-text {
-        font-size: 0.8em;
-        display: inline; /* نمایش متن در صورت فضای کافی */
-    }
-}
-/* فقط در صفحه‌های کوچک (موبایل) نمایش داده شود */
-@media (max-width: 768px) {
-  .close-btn {
-    display: block;
-  }
-}
-
-/* دکمه‌های شناور */
-/* دکمه‌های شناور */
-.floating-buttons {
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    animation: float 3s ease-in-out infinite;
-}
-
-.floating-buttons.right {
-    bottom: 30px;
-    right: 30px;
-}
-
-.floating-buttons.left {
-    bottom: 30px;
-    left: 30px;
-}
-
-.floating-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 20px;
-    border-radius: 50px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-    pointer-events: auto; /* اطمینان از قابل کلیک بودن دکمه‌ها */
-}
-
-.floating-btn i {
-    margin-left: 8px;
-    font-size: 18px;
-}
-
-/* رنگ‌بندی دکمه‌ها */
-.floating-buttons.right .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #FF8C00, #FFA500);
-}
-
-.floating-buttons.right .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #FFD700, #FFC000);
-}
-
-.floating-buttons.left .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-}
-
-.floating-buttons.left .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #E53935, #C62828);
-}
-
-/* انیمیشن‌ها */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* حالت hover */
-.floating-btn:hover {
-    transform: scale(1.1) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* نسخه موبایل */
-@media (max-width: 768px) {
-    .floating-buttons {
-        gap: 10px;
-    }
-    
-    .floating-buttons.right {
-        bottom: 20px;
-        right: 15px;
-    }
-    
-    .floating-buttons.left {
-        bottom: 20px;
-        left: 15px;
-    }
-    
-    .floating-btn {
-        padding: 10px 15px;
-        font-size: 13px;
-    }
-    
-    .floating-btn i {
-        font-size: 16px;
-        margin-left: 6px;
-    }
-}
-
-
-
-/* استایل اصلی آیکون پشتیبانی */
-.whatsapp-support {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* تغییر از left به right برای سمت راست */
-    z-index: 9999;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-support a {
-    display: flex;
-    align-items: center;
-    background: #25D366;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.whatsapp-support a:hover {
-    background: #128C7E;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 10px; /* فاصله بین آیکون و متن */
-}
-
-.support-text {
-    font-weight: bold;
-    font-size: 1em;
-}
-
-/* انیمیشن پالس برای جلب توجه */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
     }
 }
 /* حالت موبایل */
