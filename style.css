@@ -728,7 +728,7 @@ iframe.visible {
     justify-content: center;
     padding: 12px 20px;
     border-radius: 50px;
-    color: 000;
+    color: black;
     font-weight: bold;
     font-size: 15px;
     text-decoration: none;
@@ -749,10 +749,6 @@ iframe.visible {
 
 .floating-buttons.right .floating-btn:nth-child(2) {
     background: linear-gradient(135deg, #FFD700, #FFC000);
-}
-
-.floating-buttons.right .floating-btn:nth-child(3) {
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
 }
 
 .floating-buttons.left .floating-btn:nth-child(1) {
