@@ -1,929 +1,768 @@
+/* Reset و پایه‌های اولیه */
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --dark-color: #2d3436;
+  --light-color: #f5f6fa;
+  --accent-color: #fd79a8;
+  --success-color: #00b894;
+  --warning-color: #fdcb6e;
+  --font-primary: 'Vazir', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+  font-family: var(--font-primary);
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.8;
+  overflow-x: hidden;
+  text-align: right;
 }
 
-header {
-    background: #FFA500; /* نارنجی */
-    color: #000; /* مشکی */
-    padding: 40px 20px;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+/* تایپوگرافی */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    margin: 10px 0 0;
-    font-size: 1.2em;
-}
-
-.logo {
-    width: 150px; /* اندازه‌ی لوگو */
-    height: auto;
-    margin-bottom: 20px; /* فاصله‌ی لوگو از متن */
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-}
-
-.logo:hover {
-    transform: rotate(360deg); /* چرخش ۳۶۰ درجه */
-}
-
-
-
-section {
-    padding: 20px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 h2 {
-    color: #000; /* مشکی */
-    border-bottom: 2px solid #FFA500;
-    padding-bottom: 10px;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
 }
 
 h3 {
-    color: #000; /* مشکی */
-    margin-top: 20px;
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
-ul li {
-    margin: 10px 0;
-    font-size: 1.1em;
+strong, b {
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
+/* لینک‌ها */
 a {
-    color: #FFA500; /* نارنجی */
-    text-decoration: none;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
+/* دکمه‌ها */
 .button {
-    display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: none;
+  font-size: 1rem;
+  margin: 0.5rem;
 }
 
 .button:hover {
-    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-decoration: none;
+  color: white;
 }
 
-.phone-button {
-    display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s;
-    animation: pulse 2s infinite;
+.repair-button {
+  background: linear-gradient(45deg, #ff7675, #fdcb6e);
 }
 
-.phone-button:hover {
-    transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
-    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+.order-button {
+  background: linear-gradient(45deg, #00b894, #55efc4);
 }
 
-footer {
-    background: #FFA500; /*4CAF50 سبز */
-    color: #000;
-    padding: 20px;
-    margin-top: 20px;
-    transform: translateY(100%);
-    transition: transform 0.6s ease, box-shadow 0.3s ease;
+.learn-button, .payment-button {
+  background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
 }
 
-footer.visible {
-    transform: translateY(0);
+.learn-button:hover, .payment-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-footer p {
-    margin: 5px 0;
-    font-size: 1em;
-}
-
-.social-icon {
-    width: 85px; /* اندازه آیکون */
-    height: auto;
-    margin: 0 10px; /* فاصله بین آیکون‌ها */
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: scale(1.2); /* بزرگ‌تر شدن آیکون هنگام هاور */
-}
-
-iframe {
-    width: 100%;
-    height: 450px;
-    border: 0;
-    border-radius: 8px;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-iframe.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-/* استایل اسلایدر */
-.slider-container {
-  width: 100%;
+/* هدر */
+header {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+  backdrop-filter: blur(10px);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: relative;
   overflow: hidden;
-  background-color: orange;
 }
 
-.slide {
-  display: none;
-  width: 100%;
-  height: 385px;
-  align-items: center;
-  justify-content: center;
-}
-
-.slide.active {
-  display: flex;
-  animation: fade 1s;
-}
-
-.slide-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  padding: 0 5%;
-  box-sizing: border-box;
+  background: url('images/pattern.png') repeat;
+  opacity: 0.05;
+  z-index: -1;
 }
 
-/* متن در سمت راست */
-.slide-text {
-  flex: 0 0 50%;
-  text-align: center;
-  padding-left: 20px;
+header p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
 }
 
-.slide-text h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  line-height: 1.5;
-  text-align: center;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);  /* ✅ سایه‌ی مشکی ملایم */
-}
-
-/* عکس در سمت چپ و بزرگ‌تر */
-.slide-image {
-  flex: 0 0 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slide-image img {
-  max-height: 300px;
-  max-width: 100%;
-  object-fit: contain;
-  border-radius: 15px;
-}
-
-
-/* انیمیشن ساده */
-@keyframes fade {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-}
-
-/* ✅ حالت ریسپانسیو برای موبایل */
-@media (max-width: 768px) {
-  .slide-content {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-    padding: 20px;
-  }
-
-  .slide-text, .slide-image {
-    max-width: 100%;
-    flex: none;
-    width: 100%;
-  }
-
-  .slide-text {
-    text-align: center; /* ✅ وسط‌چین کردن متن در موبایل */
-  }
-    
-  .slide-text h1 {
-    font-size: 1.4rem;
-    margin-top: 20px;
-    text-align: center; /* ✅ مطمئن شو خود h1 هم وسطه */
-  }
-
-  .slide-image img {
-    max-height: 180px;
-  }
-}
-
-
-#tracking {
-    background: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-#tracking input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    text-align: center;
-}
-
-#tracking button {
-    display: inline-block;
-    background: #FFA500; /* نارنجی */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-#tracking button:hover {
-    background: #FF8C00; /* رنگ کمی تیره‌تر هنگام هاور */
-    transform: scale(1.05);
-}
-
-#repairStatus {
-    margin-top: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-}
-
-
-
-
-/* استایل بخش سفارش کالا */
-#product-order {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #000;
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-#product-order h2 {
-    color: #000;
-    border-bottom: 2px solid #000;
-}
-
-.order-steps {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.step {
-    flex: 1;
-    min-width: 250px;
-    margin: 10px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.step:hover {
-    transform: translateY(-10px);
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: #FFA500;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-/* دکمه ثبت سفارش کالا */
-.order-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #4ECDC4, #88DAC7);
-    color: white;
-    padding: 18px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.3em;
-    font-weight: bold;
-    margin: 20px auto;
-    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    max-width: 350px;
-    width: 100%;
-    animation: pulse 2s infinite;
-}
-
-.order-button:hover {
-    background: linear-gradient(135deg, #88DAC7, #4ECDC4);
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(78, 205, 196, 0.6);
-}
-
-.order-benefits {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-}
-
-.order-benefits h3 {
-    color: #000;
-    margin-top: 0;
-}
-
-.order-benefits ul {
-    text-align: right;
-    padding-right: 20px;
-}
-
-.order-benefits li {
-    margin: 10px 0;
-    font-size: 1.1em;
-    position: relative;
-    padding-right: 25px;
-}
-
-.order-benefits li:before {
-    content: "✓";
-    position: absolute;
-    right: 0;
-    color: green;
-    font-weight: bold;
-}
-
-/* استایل بخش خدمات تعمیرات */
-#repair-services {
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
-    color: #fff;
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-#repair-services h2 {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-}
-
-.service-steps {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.service-steps .step {
-    flex: 1;
-    min-width: 250px;
-    margin: 10px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    color: #333;
-}
-
-.service-steps .step:hover {
-    transform: translateY(-10px);
-}
-
-.service-steps .step-number {
-    background: #4CAF50;
-    color: #fff;
-}
-
-.service-benefits {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-}
-
-.service-benefits h3 {
-    color: #fff;
-    margin-top: 0;
-}
-
-.service-benefits ul {
-    text-align: right;
-    padding-right: 20px;
-    color: #fff;
-}
-
-.service-benefits li {
-    margin: 10px 0;
-    font-size: 1.1em;
-    position: relative;
-    padding-right: 25px;
-}
-
-.service-benefits li:before {
-    content: "✓";
-    position: absolute;
-    right: 0;
-    color: #FFD700;
-    font-weight: bold;
-}
-
-/* دکمه ثبت درخواست تعمیر */
-.repair-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #FF8C00, #FFA500); /* نارنجی */
-    color: white;
-    padding: 18px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.3em;
-    font-weight: bold;
-    margin: 20px auto;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    max-width: 350px;
-    width: 100%;
-    animation: pulse 2s infinite;
-}
-
-.repair-button:hover {
-    background: linear-gradient(135deg, #FFA500, #FF8C00);
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
-}
-
-/* استایل بخش پیگیری تعمیرات در بخش خدمات */
-#repair-request #tracking {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    color: #333;
-}
-
-#repair-request #tracking h3 {
-    color: #4CAF50;
-    margin-top: 0;
-}
-
-#repair-request #tracking input {
-    width: 70%;
-    margin: 10px auto;
-}
-
-#repair-request #tracking button {
-    background: #4CAF50;
-    color: #fff;
-}
-
-#repair-request #tracking button:hover {
-    background: #2E7D32;
-}
-
-
-
-
-
-
-/* استایل‌های جدید برای بخش پرداخت */
-.payment-section {
-    background: #f9f9f9;
-    padding: 30px 0;
-}
-
-.payment-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.payment-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.bank-card {
-    background: #f5f5f5;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bank-details {
-    text-align: right;
-}
-
-.bank-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.bank-value {
-    font-family: monospace;
-    font-size: 1.1em;
-    direction: ltr;
-    text-align: left;
-}
-
-.whatsapp-button {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-button:hover {
-    background: #128C7E;
-    transform: scale(1.05);
-}
-
-    
-    .bank-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-#tracking input:focus {
-    border-color: #FFA500;
-    outline: none;
-}
-
-.copy-button {
-    background: #FFD700;
-    color: #000;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: all 0.3s;
-}
-
-.copy-button:hover {
-    background: #FFA500;
-    transform: scale(1.05);
-}
-
-.bank-notice {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 15px;
-}
-
-
-
-@media (max-width: 768px) {
-    .order-steps {
-        flex-direction: column;
-    }
-    
-    .step {
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .bank-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .copy-button {
-        margin-top: 8px;
-        align-self: flex-end;
-    }
-}
-
-@media (max-width: 768px) {
-    /* دکمه‌های ثبت درخواست */
-    .repair-button, .order-button {
-        padding: 12px 20px;
-        font-size: 1em;
-        max-width: 90%;
-        margin: 15px auto;
-    }
-}
-
-
-/* دکمه‌های شناور */
-
-/* دکمه‌های شناور */
-
-.floating-buttons-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    overflow: hidden;
-}
-    
-.floating-buttons {
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    animation: float 3s ease-in-out infinite;
-}
-
-.floating-buttons.right {
-    bottom: 30px;
-    right: 30px;
-}
-
-.floating-buttons.left {
-    bottom: 30px;
-    left: 30px;
-}
-
-.floating-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 20px;
-    border-radius: 50px;
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-}
-.floating-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    opacity: 0.9;
-}
-
-.floating-btn i {
-    margin-left: 8px;
-    font-size: 18px;
-}
-
-/* رنگ‌بندی دکمه‌ها */
-.floating-buttons.right .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #FFA726, #FB8C00); /* نارنجی روشن‌تر */
-}
-
-.floating-buttons.right .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #FFEE58, #FFD54F); /* زرد روشن‌تر */
-}
-
-.floating-buttons.left .floating-btn:nth-child(1) {
-    background: linear-gradient(135deg, #25D366, #00BFA5); /* سبز واتساپ + تورquoise */
-}
-
-.floating-buttons.left .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #EF5350, #D32F2F); /* قرمز روشن‌تر */
-}
-
-/* انیمیشن‌ها */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* حالت hover */
-.floating-btn:hover {
-    transform: scale(1.1) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* نسخه موبایل */
-@media (max-width: 768px) {
-    .floating-buttons {
-        gap: 10px;
-    }
-    
-    .floating-buttons.right {
-        bottom: 20px;
-        right: 15px;
-    }
-    
-    .floating-buttons.left {
-        bottom: 20px;
-        left: 15px;
-    }
-    
-    .floating-btn {
-        padding: 10px 15px;
-        font-size: 13px;
-    }
-    
-    .floating-btn i {
-        font-size: 16px;
-        margin-left: 6px;
-    }
-}
-
-
-
-
-/* استایل منوی همبرگری */
+/* منوی همبرگری */
 .hamburger-menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 #menu-toggle {
-    opacity: 0;
-}
-
-#menu-toggle:checked ~ .menu-btn > span {
-    transform: rotate(45deg);
-}
-#menu-toggle:checked ~ .menu-btn > span::before {
-    top: 0;
-    transform: rotate(0);
-}
-#menu-toggle:checked ~ .menu-btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-}
-#menu-toggle:checked ~ .menu-box {
-    visibility: visible;
-    right: 0;
+  opacity: 0;
+  position: absolute;
 }
 
 .menu-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .menu-btn > span,
 .menu-btn > span::before,
 .menu-btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    transition-duration: .25s;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition-duration: .25s;
+  border-radius: 3px;
 }
+
 .menu-btn > span::before {
-    content: '';
-    top: -8px;
+  content: '';
+  top: -8px;
 }
+
 .menu-btn > span::after {
-    content: '';
-    top: 8px;
+  content: '';
+  top: 8px;
 }
 
 .menu-box {
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100%;
-    margin: 0;
-    padding: 80px 0;
-    list-style: none;
-    background-color: #f8f9fa;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    transition-duration: .25s;
-    z-index: 999;
-    direction: rtl;
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  transition-duration: .25s;
+  z-index: 999;
 }
 
 .menu-item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: 'IranSans', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    transition-duration: .25s;
+  display: block;
+  padding: 12px 24px;
+  color: var(--dark-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
 }
 
 .menu-item:hover {
-    background-color: #e9ecef;
-    color: #007bff;
+  background-color: rgba(0,0,0,0.05);
+  color: var(--primary-color);
 }
 
-/* نسخه موبایل */
+#menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .menu-box {
+  visibility: visible;
+  right: 0;
+}
+
+/* اسلایدر */
+.slider-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background: linear-gradient(135deg, rgba(78,205,196,0.1), rgba(253,121,168,0.1));
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 5%;
+}
+
+.slide-text {
+  flex: 1;
+  padding: 2rem;
+  animation: fadeInRight 1s ease;
+}
+
+.slide-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  text-shadow: none;
+}
+
+.slide-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInLeft 1s ease;
+}
+
+.slide-image img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* بخش‌های اصلی */
+section {
+  padding: 3rem 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#services {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin: 2rem auto;
+  padding: 3rem;
+}
+
+#repair-services, #product-order {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin: 2rem auto;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#repair-services::before, #product-order::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+/* مراحل خدمات */
+.service-steps, .order-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 0;
+  gap: 1.5rem;
+}
+
+.step {
+  flex: 1 1 300px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--primary-color);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.step h3 {
+  margin-top: 1rem;
+  color: var(--dark-color);
+}
+
+/* مزایا */
+.service-benefits, .order-benefits {
+  background: rgba(78,205,196,0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  border-left: 5px solid var(--secondary-color);
+}
+
+.service-benefits ul, .order-benefits ul {
+  list-style-type: none;
+}
+
+.service-benefits li, .order-benefits li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.service-benefits li::before, .order-benefits li::before {
+  content: '✓';
+  position: absolute;
+  right: 0;
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+/* پیگیری تعمیرات */
+#tracking {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin: 2rem 0;
+}
+
+#tracking input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 1rem 0;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+}
+
+#tracking button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#tracking button:hover {
+  background: var(--accent-color);
+}
+
+#repairStatus, #repairDescription, #repairCost {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.02);
+}
+
+/* دکمه‌های شناور */
+.floating-buttons {
+  position: fixed;
+  z-index: 100;
+}
+
+.floating-buttons.right {
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.floating-buttons.left {
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-btn i {
+  font-size: 1.5rem;
+}
+
+.floating-btn span {
+  position: absolute;
+  right: 70px;
+  white-space: nowrap;
+  background: white;
+  color: var(--dark-color);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.floating-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.floating-btn:hover span {
+  opacity: 1;
+  right: 80px;
+}
+
+/* نقشه */
+#location {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin: 2rem auto;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.5s ease;
+}
+
+iframe:hover {
+  transform: scale(1.01);
+}
+
+/* فوتر */
+footer {
+  background: var(--dark-color);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/pattern-dark.png') repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+footer p {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+/* انیمیشن‌ها */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* رسپانسیو */
+@media (max-width: 992px) {
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .slide-text, .slide-image {
+    flex: none;
+    width: 100%;
+  }
+  
+  .slide-text h1 {
+    font-size: 2rem;
+  }
+  
+  .service-steps, .order-steps {
+    flex-direction: column;
+  }
+  
+  .step {
+    margin-bottom: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
-    .menu-box {
-        width: 250px;
-    }
-    
-    .menu-item {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
+  .slider-container {
+    height: 350px;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+  }
+  
+  #services, #repair-services, #product-order {
+    padding: 2rem;
+  }
+  
+  .floating-buttons.right {
+    right: 10px;
+    bottom: 10px;
+  }
+  
+  .floating-buttons.left {
+    left: 10px;
+    bottom: 10px;
+  }
+  
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-btn i {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-container {
+    height: 300px;
+  }
+  
+  .slide-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  iframe {
+    height: 300px;
+  }
+  
+  .menu-box {
+    width: 100%;
+  }
 }
