@@ -236,6 +236,7 @@ p {
   background: var(--primary-orange);
   color: var(--white);
   margin: 2rem auto; /* وسط‌چین کردن */
+  width: 100%;
 }
 
 .order-button {
@@ -328,6 +329,7 @@ p {
   border-radius: 5px;
   margin: 0.5rem 0;
   font-family: Vazir, sans-serif;
+  text-align: center;
 }
 
 #tracking button {
