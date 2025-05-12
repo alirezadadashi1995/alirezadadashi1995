@@ -159,12 +159,14 @@ h2::after {
   height: 3px;
   background: var(--primary-orange);
   border-radius: 3px;
+  text-align: center; /* وسط‌چین کردن متن */
 }
 
 h3 {
-  color: var(--secondary-blue);
-  margin: 1.5rem 0 1rem;
-  font-size: 1.2rem;
+    color: var(--secondary-blue);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.2rem;
+    text-align: center; /* وسط‌چین کردن متن */
 }
 
 p {
@@ -236,8 +238,10 @@ p {
 }
 
 .order-button {
-  background: var(--secondary-blue);
-  color: var(--white);
+    background: var(--secondary-blue);
+    color: var(--white);
+    display: block;
+    margin: 2rem auto; /* وسط‌چین کردن */
 }
 
 .learn-button,
