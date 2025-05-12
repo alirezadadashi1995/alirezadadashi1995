@@ -171,6 +171,7 @@ p {
   color: var(--medium-text);
   margin-bottom: 1rem;
   line-height: 1.8;
+  text-align: center;
 }
 
 /* مراحل خدمات */
@@ -268,14 +269,17 @@ p {
 }
 
 /* لیست مزایا */
-.service-benefits,
-.order-benefits {
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-  border-top: 3px solid var(--primary-orange);
+.service-benefits, .order-benefits {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem auto; /* مرکزچین */
+    border-top: 3px solid var(--primary-orange);
+    width: fit-content;
+    text-align: right;  /* راست‌چین کردن متن */
+    direction: rtl;     /* جهت نوشتار فارسی */
 }
+
 
 .service-benefits ul,
 .order-benefits ul {
