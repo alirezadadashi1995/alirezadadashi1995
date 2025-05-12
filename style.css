@@ -76,11 +76,11 @@ header p {
 /* اسلایدر */
 .slider-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%px;
   margin: 0 auto 3rem;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   height: 400px;
 }
