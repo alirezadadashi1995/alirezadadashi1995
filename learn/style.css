@@ -1,4 +1,19 @@
 /* Reset و تنظیمات پایه */
+:root {
+  --primary-blue: #1e3c72;
+  --secondary-blue: #2a5298;
+  --primary-orange: #ff7b25;
+  --secondary-orange: #ff5e00;
+  --light-orange: #ffd8b8;
+  --dark-text: #333;
+  --medium-text: #555;
+  --light-text: #777;
+  --light-bg: #f5f7fa;
+  --white: #fff;
+  --light-gray: #f0f0f0;
+  --border-color: #e0e0e0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,25 +22,50 @@
 }
 
 body {
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
   line-height: 1.6;
+  position: relative;
 }
 
 /* هدر صفحه */
 header {
   text-align: center;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
   margin-bottom: 2rem;
-  border-radius: 0 0 15px 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-orange);
 }
 
 header h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 3px;
 }
 
 header p {
@@ -33,432 +73,308 @@ header p {
   opacity: 0.9;
 }
 
-/* کانتینر اصلی */
-.contact-container {
+/* اسلایدر */
+.slider-container {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 0 auto 3rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 400px;
 }
 
-/* بخش اطلاعات تماس */
-.contact-info {
-  margin-bottom: 3rem;
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.contact-info h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #2a5298;
+.slide.active {
+  opacity: 1;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
+}
+
+.slide-text {
+  flex: 1;
+  padding: 2rem;
+  text-align: right;
+}
+
+.slide-text h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.slide-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-image img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* بخش‌های اصلی */
+section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+h2 {
+  color: var(--secondary-blue);
   font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
 }
 
-.contact-methods {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-orange);
+  border-radius: 3px;
+}
+
+h3 {
+  color: var(--secondary-blue);
+  margin: 1.5rem 0 1rem;
+  font-size: 1.2rem;
+}
+
+p {
+  color: var(--medium-text);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+/* مراحل خدمات */
+.service-steps,
+.order-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
+  margin: 2rem 0;
 }
 
-.contact-card {
-  background: white;
+.step {
+  flex: 1;
+  min-width: 250px;
+  background: var(--white);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.contact-card i {
-  font-size: 2.5rem;
-  color: #2a5298;
-  margin-bottom: 1rem;
-}
-
-.contact-card h3 {
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.contact-card p {
-  color: #666;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
-
-.contact-link {
-  display: inline-block;
-  background: #2a5298;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  transition: background 0.3s;
-}
-
-.contact-link:hover {
-  background: #1e3c72;
-}
-
-.contact-hours {
-  font-size: 0.8rem;
-  color: #888;
-}
-
-/* شبکه‌های اجتماعی */
-.social-media {
-  margin-bottom: 3rem;
-}
-
-.social-media h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #2a5298;
-  font-size: 1.5rem;
-}
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.social-link i {
-  margin-left: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.social-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.instagram {
-  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-}
-
-.eitaa {
-  background: linear-gradient(45deg, #0088cc, #00a8ff);
-}
-
-.telegram {
-  background: linear-gradient(45deg, #0088cc, #00a8ff);
-}
-
-/* فرم تماس */
-.contact-form-section {
-  margin-bottom: 3rem;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.contact-form-section h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #2a5298;
-  font-size: 1.5rem;
-}
-
-.contact-form-section p {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #666;
-}
-
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #555;
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-family: Vazir, sans-serif;
-  transition: border 0.3s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #2a5298;
-  outline: none;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.submit-btn {
-  background: #2a5298;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: Vazir, sans-serif;
-  font-size: 1rem;
-  transition: background 0.3s;
-  width: 100%;
-}
-
-.submit-btn:hover {
-  background: #1e3c72;
-}
-
-.submit-btn i {
-  margin-left: 0.5rem;
-}
-
-/* نقشه */
-.location-map {
-  margin-bottom: 3rem;
-}
-
-.location-map h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #2a5298;
-  font-size: 1.5rem;
-}
-
-.location-map iframe {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border: none;
-}
-
-/* سوالات متداول */
-.faq-section {
-  margin-bottom: 3rem;
-}
-
-.faq-section h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #2a5298;
-  font-size: 1.5rem;
-}
-
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.faq-question {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background: white;
-  border: none;
-  text-align: right;
-  font-family: Vazir, sans-serif;
-  font-size: 1rem;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s;
-}
-
-.faq-question:hover {
-  background: #f5f7fa;
-}
-
-.faq-question i {
+  border-top: 3px solid var(--primary-orange);
   transition: transform 0.3s;
 }
 
-.faq-question.active i {
-  transform: rotate(180deg);
+.step:hover {
+  transform: translateY(-5px);
 }
 
-.faq-answer {
-  padding: 0 1.5rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease;
-  background: #f9f9f9;
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--secondary-blue);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
 }
 
-.faq-answer.active {
-  padding: 1rem 1.5rem;
-  max-height: 500px;
+/* دکمه‌ها */
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 1rem 0;
+  text-align: center;
 }
 
-.faq-answer p {
-  color: #555;
-  line-height: 1.7;
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.repair-button {
+  background: var(--primary-orange);
+  color: var(--white);
+}
+
+.order-button {
+  background: var(--secondary-blue);
+  color: var(--white);
+}
+
+.learn-button,
+.payment-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  background: var(--secondary-blue);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin: 1rem 0;
+}
+
+.learn-button:hover,
+.payment-button:hover {
+  background: var(--primary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.learn-btn-container,
+.payment-btn-container {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+/* لیست مزایا */
+.service-benefits,
+.order-benefits {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  border-top: 3px solid var(--primary-orange);
+}
+
+.service-benefits ul,
+.order-benefits ul {
+  list-style: none;
+  padding-right: 1rem;
+}
+
+.service-benefits li,
+.order-benefits li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-right: 1.5rem;
+  color: var(--medium-text);
+}
+
+.service-benefits li:before,
+.order-benefits li:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--primary-orange);
+  border-radius: 50%;
+}
+
+/* پیگیری تعمیرات */
+#tracking {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  border-top: 3px solid var(--primary-orange);
+}
+
+#tracking input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  font-family: Vazir, sans-serif;
+}
+
+#tracking button {
+  background: var(--primary-orange);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Vazir, sans-serif;
+  transition: background 0.3s;
+}
+
+#tracking button:hover {
+  background: var(--secondary-orange);
+}
+
+#repairStatus,
+#repairDescription,
+#repairCost {
+  margin: 0.5rem 0;
+  color: var(--medium-text);
 }
 
 /* فوتر */
 footer {
-  background: #1e3c72;
-  color: white;
-  padding: 3rem 1rem 1.5rem;
-  margin-top: 3rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.footer-logo img {
-  max-width: 150px;
-  margin-bottom: 1rem;
-}
-
-.footer-logo p {
-  opacity: 0.9;
-  font-size: 0.9rem;
-}
-
-.footer-links h3,
-.footer-contact h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.footer-links ul,
-.footer-contact ul {
-  list-style: none;
-}
-
-.footer-links li,
-.footer-contact li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-links a {
-  color: #ddd;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
-.footer-contact li i {
-  margin-left: 0.5rem;
-  width: 20px;
+  background: var(--primary-blue);
+  color: var(--white);
   text-align: center;
-}
-
-.copyright {
-  text-align: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* دکمه‌های شناور */
-.floating-buttons {
-  position: fixed;
-  bottom: 2rem;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.floating-buttons.right {
-  right: 2rem;
-}
-
-.floating-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  color: white;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 2rem 1rem;
   position: relative;
-  overflow: hidden;
 }
 
-.floating-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.floating-btn span {
+footer::before {
+  content: '';
   position: absolute;
-  right: 70px;
-  white-space: nowrap;
-  background: white;
-  color: #333;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s, right 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-orange);
 }
 
-.floating-btn:hover span {
-  opacity: 1;
-  right: 80px;
+footer p {
+  color: var(--white);
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.whatsapp-btn {
-  background: #25D366;
-}
-
-.call-btn {
-  background: #2a5298;
+.logo {
+  max-width: 150px;
+  margin-top: 1rem;
 }
 
 /* منوی همبرگری */
@@ -471,14 +387,12 @@ footer {
 
 #menu-toggle {
   opacity: 0;
+  position: absolute;
 }
 
 .menu-btn {
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
   width: 26px;
   height: 26px;
   cursor: pointer;
@@ -492,7 +406,7 @@ footer {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: var(--white);
   transition-duration: .25s;
 }
 
@@ -517,23 +431,27 @@ footer {
   margin: 0;
   padding: 80px 0;
   list-style: none;
-  background-color: #1e3c72;
+  background-color: var(--primary-blue);
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
   transition-duration: .25s;
+  z-index: 999;
 }
 
 .menu-item {
   display: block;
   padding: 12px 24px;
-  color: white;
-  font-size: 1rem;
+  color: var(--white);
+  font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
   transition-duration: .25s;
+  border-right: 3px solid transparent;
 }
 
 .menu-item:hover {
-  background-color: #2a5298;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-right-color: var(--primary-orange);
+  color: var(--light-orange);
 }
 
 #menu-toggle:checked ~ .menu-btn > span {
@@ -555,52 +473,144 @@ footer {
   left: 0;
 }
 
+/* دکمه‌های شناور */
+.floating-buttons {
+  position: fixed;
+  bottom: 2rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.floating-buttons.right {
+  right: 2rem;
+}
+
+.floating-buttons.left {
+  left: 2rem;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-btn span {
+  position: absolute;
+  right: 70px;
+  white-space: nowrap;
+  background: var(--white);
+  color: var(--dark-text);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, right 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.floating-btn:hover span {
+  opacity: 1;
+  right: 80px;
+}
+
+/* رنگ‌بندی دکمه‌های شناور */
+.floating-btn:nth-child(1) {
+  background: var(--primary-orange);
+}
+
+.floating-btn:nth-child(2) {
+  background: var(--secondary-blue);
+}
+
+.floating-btn:nth-child(3) {
+  background: #25D366;
+}
+
+.floating-btn:nth-child(4) {
+  background: var(--secondary-blue);
+}
+
 /* رسپانسیو */
 @media (max-width: 768px) {
-  header h1 {
+  .slider-container {
+    height: 300px;
+  }
+  
+  .slide-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .slide-text h1 {
     font-size: 1.5rem;
   }
   
-  .contact-methods {
-    grid-template-columns: 1fr;
+  .slide-image img {
+    max-height: 150px;
   }
   
-  .social-links {
+  .service-steps,
+  .order-steps {
     flex-direction: column;
-    align-items: center;
-  }
-  
-  .social-link {
-    width: 100%;
-    justify-content: center;
   }
   
   .floating-buttons.right {
     right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .floating-buttons.left {
+    left: 1rem;
+    bottom: 1rem;
   }
   
   .floating-btn {
     width: 50px;
     height: 50px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   header h1 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   
   header p {
     font-size: 1rem;
   }
   
-  .contact-form-section {
-    padding: 1.5rem 1rem;
+  .slide-text {
+    padding: 1rem;
   }
   
-  .floating-buttons.right {
-    right: 0.5rem;
-    bottom: 1rem;
+  .slide-text h1 {
+    font-size: 1.2rem;
+  }
+  
+  .button,
+  .learn-button,
+  .payment-button {
+    width: 100%;
+    text-align: center;
   }
 }
