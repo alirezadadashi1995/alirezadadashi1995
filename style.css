@@ -305,6 +305,28 @@ p {
   }
 }
 
+/* انیمیشن پارازیت برای دکمه‌های مهم */
+.repair-button::after,
+.order-button::after,
+.learn-button::after,
+.payment-button::after {
+  content: '';
+  position: absolute;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0) 45%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0) 55%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+
 /* لیست مزایا */
 .service-benefits, 
 .order-benefits {
