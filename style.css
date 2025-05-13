@@ -52,20 +52,6 @@ header::after {
 header h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  position: relative;
-  display: inline-block;
-}
-
-header h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 50px;
-  height: 3px;
-  background: var(--primary-orange);
-  border-radius: 3px;
 }
 
 header p {
@@ -76,11 +62,11 @@ header p {
 /* اسلایدر */
 .slider-container {
   width: 100%;
-  max-width: 100%px;
-  margin: 0 auto 3rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
   position: relative;
   overflow: hidden;
-  border-radius: 0px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   height: 400px;
 }
@@ -126,19 +112,27 @@ header p {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 .slide-image img {
   max-width: 100%;
-  max-height: 300px;
+  max-height: 100%;
   object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
 }
 
 /* بخش‌های اصلی */
 section {
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto 3rem;
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
@@ -146,34 +140,18 @@ h2 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  position: relative;
-}
-
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 80px;
-  height: 3px;
-  background: var(--primary-orange);
-  border-radius: 3px;
-  text-align: center; /* وسط‌چین کردن متن */
 }
 
 h3 {
-    color: var(--secondary-blue);
-    margin: 1.5rem 0 1rem;
-    font-size: 1.2rem;
-    text-align: center; /* وسط‌چین کردن متن */
+  color: var(--secondary-blue);
+  margin: 1.2rem 0 0.8rem;
+  font-size: 1.2rem;
 }
 
 p {
   color: var(--medium-text);
   margin-bottom: 1rem;
   line-height: 1.8;
-  text-align: center;
 }
 
 /* مراحل خدمات */
@@ -182,43 +160,41 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
 }
 
 .step {
   flex: 1;
-  min-width: 250px;
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  min-width: 220px;
+  background: var(--light-bg);
+  padding: 1.2rem;
+  border-radius: 8px;
   text-align: center;
-  border-top: 3px solid var(--primary-orange);
   transition: transform 0.3s;
 }
 
 .step:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .step-number {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: var(--secondary-blue);
   color: var(--white);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin: 0 auto 0.8rem;
   font-weight: bold;
 }
 
 /* دکمه‌ها */
 .button {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
@@ -228,22 +204,18 @@ p {
 }
 
 .button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .repair-button {
   background: var(--primary-orange);
   color: var(--white);
-  margin: 2rem auto; /* وسط‌چین کردن */
-  width: 100%;
 }
 
 .order-button {
-    background: var(--secondary-blue);
-    color: var(--white);
-    display: block;
-    margin: 2rem auto; /* وسط‌چین کردن */
+  background: var(--secondary-blue);
+  color: var(--white);
 }
 
 .learn-button,
@@ -251,7 +223,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 50px;
   background: var(--secondary-blue);
   color: var(--white);
@@ -264,28 +236,24 @@ p {
 .learn-button:hover,
 .payment-button:hover {
   background: var(--primary-blue);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .learn-btn-container,
 .payment-btn-container {
   text-align: center;
-  margin: 1.5rem 0;
+  margin: 1.2rem 0;
 }
 
 /* لیست مزایا */
-.service-benefits, .order-benefits {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 2rem auto; /* مرکزچین */
-    border-top: 3px solid var(--primary-orange);
-    width: 100%;
-    text-align: right;  /* راست‌چین کردن متن */
-    direction: rtl;     /* جهت نوشتار فارسی */
+.service-benefits,
+.order-benefits {
+  background: var(--light-bg);
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
 }
-
 
 .service-benefits ul,
 .order-benefits ul {
@@ -295,9 +263,9 @@ p {
 
 .service-benefits li,
 .order-benefits li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   position: relative;
-  padding-right: 1.5rem;
+  padding-right: 1.2rem;
   color: var(--medium-text);
 }
 
@@ -315,33 +283,30 @@ p {
 
 /* پیگیری تعمیرات */
 #tracking {
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin: 2rem 0;
-  border-top: 3px solid var(--primary-orange);
+  background: var(--light-bg);
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
 }
 
 #tracking input {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.7rem;
   border: 1px solid var(--border-color);
   border-radius: 5px;
   margin: 0.5rem 0;
   font-family: Vazir, sans-serif;
-  text-align: center;
 }
 
 #tracking button {
   background: var(--primary-orange);
   color: var(--white);
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 5px;
   cursor: pointer;
   font-family: Vazir, sans-serif;
   transition: background 0.3s;
-  margin: 2rem auto; /* وسط‌چین کردن */
 }
 
 #tracking button:hover {
@@ -353,6 +318,21 @@ p {
 #repairCost {
   margin: 0.5rem 0;
   color: var(--medium-text);
+}
+
+/* بخش موقعیت */
+#location {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+#location iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* فوتر */
@@ -384,14 +364,16 @@ footer p {
 
 .logo {
   max-width: 150px;
+  max-height: 80px;
   margin-top: 1rem;
+  object-fit: contain;
 }
 
 /* منوی همبرگری */
 .hamburger-menu {
   position: fixed;
   top: 1rem;
-  right: 1rem; /* تغییر دادیم از left به right */
+  left: 1rem;
   z-index: 1000;
 }
 
@@ -400,64 +382,49 @@ footer p {
   position: absolute;
 }
 
-#menu-toggle:checked ~ .menu-btn > span {
-    transform: rotate(45deg);
-}
-#menu-toggle:checked ~ .menu-btn > span::before {
-    top: 0;
-    transform: rotate(0);
-}
-#menu-toggle:checked ~ .menu-btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-}
-#menu-toggle:checked ~ .menu-box {
-    visibility: visible;
-    right: 0;
-}
-
-
 .menu-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .menu-btn > span,
 .menu-btn > span::before,
 .menu-btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-orange);
-    transition-duration: .25s;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  transition-duration: .25s;
 }
+
 .menu-btn > span::before {
-    content: '';
-    top: -8px;
+  content: '';
+  top: -8px;
 }
+
 .menu-btn > span::after {
-    content: '';
-    top: 8px;
+  content: '';
+  top: 8px;
 }
+
 .menu-box {
   display: block;
   position: fixed;
   visibility: hidden;
   top: 0;
-  right: -100%; /* تغییر دادیم از left به right */
+  left: -100%;
   width: 300px;
   height: 100%;
   margin: 0;
   padding: 80px 0;
   list-style: none;
   background-color: var(--primary-blue);
-  box-shadow: -1px 0px 6px rgba(0, 0, 0, .2); /* سایه را هم برعکس کردیم */
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
   transition-duration: .25s;
   z-index: 999;
 }
@@ -470,73 +437,89 @@ footer p {
   font-weight: 600;
   text-decoration: none;
   transition-duration: .25s;
-  border-left: 3px solid transparent; /* از border-right به border-left تغییر دادیم */
 }
 
 .menu-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-left-color: var(--primary-orange); /* برای سمت راست */
   color: var(--light-orange);
 }
 
+#menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .menu-box {
+  visibility: visible;
+  left: 0;
+}
 
 /* دکمه‌های شناور */
 .floating-buttons {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1.5rem;
   z-index: 100;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .floating-buttons.right {
-  right: 2rem;
+  right: 1.5rem;
 }
 
 .floating-buttons.left {
-  left: 2rem;
+  left: 1.5rem;
 }
 
 .floating-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
 }
 
 .floating-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
 }
 
 .floating-btn span {
   position: absolute;
-  right: 70px;
+  right: 60px;
   white-space: nowrap;
   background: var(--white);
   color: var(--dark-text);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s, right 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .floating-btn:hover span {
   opacity: 1;
-  right: 80px;
+  right: 70px;
 }
 
 /* رنگ‌بندی دکمه‌های شناور */
@@ -567,8 +550,17 @@ footer p {
     padding: 1rem;
   }
   
+  .slide-text {
+    padding: 1rem;
+    text-align: center;
+  }
+  
   .slide-text h1 {
     font-size: 1.5rem;
+  }
+  
+  .slide-image {
+    padding: 0;
   }
   
   .slide-image img {
@@ -580,20 +572,13 @@ footer p {
     flex-direction: column;
   }
   
-  .floating-buttons.right {
-    right: 1rem;
-    bottom: 1rem;
+  section {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
   }
   
-  .floating-buttons.left {
-    left: 1rem;
-    bottom: 1rem;
-  }
-  
-  .floating-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+  #location iframe {
+    height: 300px;
   }
 }
 
@@ -606,10 +591,6 @@ footer p {
     font-size: 1rem;
   }
   
-  .slide-text {
-    padding: 1rem;
-  }
-  
   .slide-text h1 {
     font-size: 1.2rem;
   }
@@ -617,5 +598,29 @@ footer p {
   .button,
   .learn-button,
   .payment-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .logo {
+    max-width: 120px;
+  }
+  
+  .floating-buttons {
+    bottom: 1rem;
+  }
+  
+  .floating-buttons.right {
+    right: 1rem;
+  }
+  
+  .floating-buttons.left {
+    left: 1rem;
+  }
+  
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
   }
 }
