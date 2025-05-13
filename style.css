@@ -434,7 +434,7 @@ footer p {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #333;
+    background-color: var(--primary-orange);
     transition-duration: .25s;
 }
 .menu-btn > span::before {
