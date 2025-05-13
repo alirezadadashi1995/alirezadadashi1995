@@ -409,7 +409,10 @@ footer p {
   z-index: 1;
 }
 
-.menu-btn > span,
+.menu-btn > span {
+  position: relative; /* اضافه کن برای درست عمل کردن before/after */
+}
+
 .menu-btn > span::before,
 .menu-btn > span::after {
   display: block;
