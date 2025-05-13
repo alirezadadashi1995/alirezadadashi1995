@@ -62,11 +62,11 @@ header p {
 /* اسلایدر */
 .slider-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 2rem;
+  max-width: 100%px;
+  margin: 0 auto 3rem;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   height: 400px;
 }
@@ -112,18 +112,12 @@ header p {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
 }
 
 .slide-image img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 300px;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-}
 
 /* بخش‌های اصلی */
 section {
@@ -373,7 +367,7 @@ footer p {
 .hamburger-menu {
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  right: 1rem; /* تغییر دادیم از left به right */
   z-index: 1000;
 }
 
@@ -382,49 +376,64 @@ footer p {
   position: absolute;
 }
 
+#menu-toggle:checked ~ .menu-btn > span {
+    transform: rotate(45deg);
+}
+#menu-toggle:checked ~ .menu-btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu-toggle:checked ~ .menu-btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu-toggle:checked ~ .menu-box {
+    visibility: visible;
+    right: 0;
+}
+
+
 .menu-btn {
-  display: flex;
-  align-items: center;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  z-index: 1;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 .menu-btn > span,
 .menu-btn > span::before,
 .menu-btn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: var(--white);
-  transition-duration: .25s;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-orange);
+    transition-duration: .25s;
 }
-
 .menu-btn > span::before {
-  content: '';
-  top: -8px;
+    content: '';
+    top: -8px;
 }
-
 .menu-btn > span::after {
-  content: '';
-  top: 8px;
+    content: '';
+    top: 8px;
 }
-
 .menu-box {
   display: block;
   position: fixed;
   visibility: hidden;
   top: 0;
-  left: -100%;
+  right: -100%; /* تغییر دادیم از left به right */
   width: 300px;
   height: 100%;
   margin: 0;
   padding: 80px 0;
   list-style: none;
   background-color: var(--primary-blue);
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  box-shadow: -1px 0px 6px rgba(0, 0, 0, .2); /* سایه را هم برعکس کردیم */
   transition-duration: .25s;
   z-index: 999;
 }
@@ -437,31 +446,15 @@ footer p {
   font-weight: 600;
   text-decoration: none;
   transition-duration: .25s;
+  border-left: 3px solid transparent; /* از border-right به border-left تغییر دادیم */
 }
 
 .menu-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-orange); /* برای سمت راست */
   color: var(--light-orange);
 }
 
-#menu-toggle:checked ~ .menu-btn > span {
-  transform: rotate(45deg);
-}
-
-#menu-toggle:checked ~ .menu-btn > span::before {
-  top: 0;
-  transform: rotate(0);
-}
-
-#menu-toggle:checked ~ .menu-btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-#menu-toggle:checked ~ .menu-box {
-  visibility: visible;
-  left: 0;
-}
 
 /* دکمه‌های شناور */
 .floating-buttons {
@@ -598,8 +591,6 @@ footer p {
   .button,
   .learn-button,
   .payment-button {
-    width: 100%;
-    text-align: center;
   }
   
   .logo {
