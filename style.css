@@ -295,26 +295,6 @@ p {
   margin: 1.5rem 0;
 }
 
-/* انیمیشن پارازیت برای دکمه‌های مهم */
-.repair-button::after,
-.order-button::after,
-.learn-button::after,
-.payment-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to bottom right,
-    rgba(255,255,255,0) 45%,
-    rgba(255,255,255,0.8) 50%,
-    rgba(255,255,255,0) 55%
-  );
-  transform: rotate(30deg);
-  animation: shine 3s infinite;
-}
 
 @keyframes shine {
   0% {
