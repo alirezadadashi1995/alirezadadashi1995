@@ -447,43 +447,279 @@ p {
   text-align: center;
 }
 
-/* فوتر */
-footer {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-  color: var(--white);
-  text-align: center;
-  padding: 2rem 1rem;
+/* استایل فوتر */
+.site-footer {
+  background: linear-gradient(135deg, #1a2a4a 0%, #1e3c72 100%);
+  color: #fff;
+  padding: 3rem 0 0;
   position: relative;
-  margin-top: 3rem;
+  overflow: hidden;
 }
 
-footer::before {
+.site-footer::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--primary-orange);
+  background: linear-gradient(90deg, #F59F00, #FFB01F);
 }
 
-footer p {
-  color: var(--white);
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section {
+  padding: 1rem;
+  position: relative;
+}
+
+.footer-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1rem;
+  height: 100%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-section:last-child::after {
+  display: none;
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.7rem;
+  position: relative;
+  color: #FFB01F;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #F59F00, #FFB01F);
+}
+
+/* استایل بخش تماس */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
   margin-bottom: 1rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0.9;
+  line-height: 1.6;
 }
 
-.logo {
-  max-width: 120px;
-  margin-top: 1rem;
-  transition: transform 0.5s ease;
+.contact-item i {
+  color: #FFB01F;
+  margin-top: 3px;
 }
 
-.logo:hover {
-  transform: rotate(360deg);
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.social-links a:hover {
+  background: #FFB01F;
+  transform: translateY(-3px);
+}
+
+/* استایل لینک های سریع */
+.quick-links ul {
+  list-style: none;
+}
+
+.quick-links li {
+  margin-bottom: 0.8rem;
+}
+
+.quick-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: block;
+  padding: 0.3rem 0;
+  position: relative;
+}
+
+.quick-links a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #FFB01F;
+  transition: width 0.3s;
+}
+
+.quick-links a:hover {
+  color: #FFB01F;
+  padding-right: 10px;
+}
+
+.quick-links a:hover::before {
+  width: 8px;
+}
+
+/* استایل ساعات کاری */
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.hours-item span:first-child {
+  color: #ddd;
+}
+
+.hours-item span:last-child {
+  font-weight: bold;
+}
+
+.emergency-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background: rgba(255, 176, 31, 0.1);
+  border-radius: 5px;
+  color: #FFB01F;
+}
+
+.emergency-contact i {
+  font-size: 1.2rem;
+}
+
+/* استایل خبرنامه */
+.newsletter p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.newsletter-form input {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: Vazir, sans-serif;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input:focus {
+  outline: 1px solid #FFB01F;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #F59F00, #FFB01F);
+  color: #1a2a4a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: Vazir, sans-serif;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(245, 159, 0, 0.3);
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+  transform: rotate(5deg) scale(1.05);
+}
+
+/* استایل کپی رایت */
+.copyright {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.copyright p:first-child {
+  margin-bottom: 0.5rem;
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-section::after {
+    display: none;
+  }
+  
+  .footer-section.newsletter {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-section.newsletter {
+    grid-column: span 1;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem;
+  }
 }
 
 /* منوی همبرگری */
