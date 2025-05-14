@@ -33,7 +33,7 @@ body {
 header {
   text-align: center;
   padding: 3rem 1rem;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-blue) 100%);
   color: var(--white);
   margin-bottom: 2rem;
   position: relative;
@@ -96,14 +96,14 @@ header p {
   justify-content: space-between;
   height: 100%;
   padding: 2rem;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-blue) 100%);
   color: var(--white);
 }
 
 .slide-text {
   flex: 1;
   padding: 2rem;
-  text-align: right;
+  text-align: center;
 }
 
 .slide-text h1 {
@@ -440,7 +440,7 @@ p {
 
 /* فوتر */
 footer {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
   color: var(--white);
   text-align: center;
   padding: 2rem 1rem;
