@@ -668,44 +668,21 @@ footer p {
 }
 
 /* متن دکمه‌های شناور */
+/* متن hover برای هر دکمه */
 .floating-btn:nth-child(1)::after {
   content: 'ثبت تعمیر';
-  position: absolute;
-  right: 70px;
-  white-space: nowrap;
-  background: var(--white);
-  color: var(--dark-text);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: all 0.3s;
 }
-.floating-btn:nth-child(1):hover::after {
-  opacity: 1;
-  right: 80px;
-}
-
 .floating-btn:nth-child(2)::after {
   content: 'سفارش کالا';
-  position: absolute;
-  right: 70px;
-  white-space: nowrap;
-  background: var(--white);
-  color: var(--dark-text);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: all 0.3s;
 }
-.floating-btn:nth-child(2):hover::after {
-  opacity: 1;
-  right: 80px;
-}
-
 .floating-btn:nth-child(3)::after {
   content: 'پشتیبانی';
+}
+.floating-btn:nth-child(4)::after {
+  content: 'تماس فوری';
+}
+
+.floating-btn::after {
   position: absolute;
   right: 70px;
   white-space: nowrap;
@@ -716,29 +693,15 @@ footer p {
   font-size: 0.9rem;
   opacity: 0;
   transition: all 0.3s;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.floating-btn:nth-child(3):hover::after {
+
+.floating-btn:hover::after {
   opacity: 1;
   right: 80px;
 }
 
-.floating-btn:nth-child(4)::after {
-  content: 'تماس فوری';
-  position: absolute;
-  right: 70px;
-  white-space: nowrap;
-  background: var(--white);
-  color: var(--dark-text);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: all 0.3s;
-}
-.floating-btn:nth-child(4):hover::after {
-  opacity: 1;
-  right: 80px;
-}
 
 /* رسپانسیو */
 @media (max-width: 768px) {
