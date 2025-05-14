@@ -311,8 +311,7 @@ p {
 
 .learn-button,
 .floating-btn,
-.payment-button,
-{
+.payment-button, {
   animation: pulse-orange 2s infinite;
 }
 
