@@ -720,7 +720,7 @@ footer p {
   gap: 0.75rem;
   padding: 0.5rem 1rem;
   border-radius: 30px;
-  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
   color: var(--white);
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
