@@ -310,7 +310,8 @@ p {
 }
 
 .learn-button,
-.floating-btn,
+.repair-button,
+.order-button,
 .payment-button {
   animation: pulse-orange 2s infinite;
 }
