@@ -330,7 +330,7 @@ p {
 .repair-button,
 .order-button,
 .payment-button {
- animation: pulse-orange 2s infinite , float 3s ease-in-out infinite;
+ animation: pulse-orange 2s infinite , float 3s ease-in-out infinite , ripple 2s infinite ;
 }
 
 /* لیست مزایا */
