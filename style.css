@@ -1,8 +1,8 @@
 :root {
   --primary-blue: #1e3c72;
   --secondary-blue: #2a5298;
-  --primary-orange: #ff7b25;
-  --secondary-orange: #ff5e00;
+  --primary-orange: ##F59F00;
+  --secondary-orange: ##FFB01F;
   --light-orange: #ffd8b8;
   --dark-text: #333;
   --medium-text: #555;
@@ -33,7 +33,7 @@ body {
 header {
   text-align: center;
   padding: 3rem 1rem;
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-blue) 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
   color: var(--white);
   margin-bottom: 2rem;
   position: relative;
@@ -97,7 +97,7 @@ header p {
   justify-content: space-between;
   height: 100%;
   padding: 5rem;
-  background: linear-gradient(135deg, #cf713e 0%, var(--secondary-blue) 100%);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
   color: var(--white);
 }
 
@@ -441,7 +441,7 @@ p {
 
 /* فوتر */
 footer {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
   color: var(--white);
   text-align: center;
   padding: 2rem 1rem;
