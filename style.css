@@ -97,7 +97,6 @@ header p {
   justify-content: space-between;
   height: 100%;
   padding: 5rem;
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
   color: var(--white);
 }
 
@@ -110,7 +109,7 @@ header p {
 .slide-text h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--white);
+  color: var(--primary-blue);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
