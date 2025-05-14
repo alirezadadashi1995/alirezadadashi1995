@@ -628,79 +628,35 @@ footer p {
 .floating-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
   color: var(--white);
-  font-size: 1.5rem;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 .floating-btn:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-.floating-btn span {
-  position: absolute;
-  right: 70px;
-  white-space: nowrap;
-  background: var(--white);
-  color: var(--dark-text);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.floating-btn i {
+  font-size: 1.3rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 50%;
 }
 
-.floating-btn:hover span {
-  opacity: 1;
-  right: 80px;
+.btn-text {
+  font-weight: bold;
+  font-size: 0.95rem;
 }
 
-/* متن دکمه‌های شناور */
-/* متن hover برای هر دکمه */
-.floating-btn:nth-child(1)::after {
-  content: 'ثبت تعمیر';
-}
-.floating-btn:nth-child(2)::after {
-  content: 'سفارش کالا';
-}
-.floating-btn:nth-child(3)::after {
-  content: 'پشتیبانی';
-}
-.floating-btn:nth-child(4)::after {
-  content: 'تماس فوری';
-}
-
-.floating-btn::after {
-  position: absolute;
-  right: 70px;
-  white-space: nowrap;
-  background: var(--white);
-  color: var(--dark-text);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: all 0.3s;
-  pointer-events: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.floating-btn:hover::after {
-  opacity: 1;
-  right: 80px;
-}
 
 
 /* رسپانسیو */
