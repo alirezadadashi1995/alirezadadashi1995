@@ -73,6 +73,7 @@ header p {
   border-radius: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   height: 400px;
+  margin-top: -32px;
 }
 
 .slide {
@@ -95,8 +96,8 @@ header p {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-blue) 100%);
+  padding: 5rem;
+  background: linear-gradient(135deg, #cf713e 0%, var(--secondary-blue) 100%);
   color: var(--white);
 }
 
