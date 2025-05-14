@@ -296,7 +296,7 @@ p {
   margin: 1.5rem 0;
 }
 
-/* انیمیشن ویژه دکمه یادگیری */
+/* انیمیشن ویژه دکمه ها */
 @keyframes pulse-orange {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7);
@@ -309,7 +309,10 @@ p {
   }
 }
 
-.learn-button {
+.learn-button,
+.floating-btn,
+.payment-button,
+{
   animation: pulse-orange 2s infinite;
 }
 
